@@ -1,0 +1,174 @@
+nav,
+menu {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+menu,
+nav {
+    display: block
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+.hide {
+    display: none
+}
+div.content {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    *zoom: 1
+}
+div.navcontainer {
+    width: 100%;
+    margin: 0 auto
+}
+#nav {
+    background-color: #121b21;
+    height: 72px;
+    text-align: center;
+    padding-top: 0px;
+    line-height: 32px
+}
+#nav a.logo {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 40px
+}
+#nav a.menu-button {
+    display: none
+}
+#nav ul {
+    display: inline-block;
+    height: 72px;
+    vertical-align: middle;
+    padding-top: 6px
+}
+#nav .active,
+#nav li:hover a {
+    color: #fff
+}
+#nav li {
+    font-family: "FuturaBT-Bold", Impact, sans-serif;
+    text-transform: uppercase;
+    word-spacing: 0.1em;
+    color: #121b21;
+    font-size: 14pt;
+    display: inline;
+    position: relative
+}
+#nav li.active a {
+    color: #fff
+}
+#nav li.active a:after {
+    /*content: url();*/
+    height: 8px;
+    width: 15px;
+    position: absolute;
+    left: 42%;
+    top: 41px
+}
+#nav li a {
+    color: #c4cbcf
+}
+#nav li+li {
+    margin-left: 50px
+}
+#main div.content {
+    padding: 55px 0 50px
+}
+a {
+    text-decoration: none;
+    color: #0388a6
+}
+a:hover {
+    color: #009ce0
+}
+
+.headerImg {
+    background-image: url(../images/StockPhotos/headerSmall.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+}
+
+#out_map_container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#map_container {
+    position: relative;
+}
+
+/*#map {
+    margin-top: 0;
+    height: 500px;
+    width: 100%;
+}*/
+
+#map {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 22.25%;
+    padding-top: 30px;
+    position: relative;
+}
+
+
+.divContent {
+    width: 100%;
+    height: 400px;
+}
+
+
+
+.large-nav .navbar-brand {
+  height: 80px;
+  padding-top: 7px;
+}
+
+.large-nav .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.large-nav .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+body {
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+
+
+.panel-default> .panel-footer {
+    background-color: #282827;
+    border: #282827;
+}
+
+.navbar-static-bottom {
+    color: white;
+    text-align: center;
+}
+
+#custom-search-input {
+    z-index: 1;
+}
+
+
+

@@ -1,0 +1,38 @@
+.large-nav .navbar-brand {
+  height: 80px;
+  padding-top: 7px;
+}
+
+.large-nav .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.large-nav .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+body {
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+
+
+.panel-default> .panel-footer {
+    background-color: #282827;
+    border: #282827;
+}
+
+.navbar-static-bottom {
+    color: white;
+    text-align: center;
+}
+
+#custom-search-input {
+    z-index: 1;
+}
