@@ -1,3 +1,8 @@
+body {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
 .large-nav .navbar-brand {
   height: 80px;
   padding-top: 7px;
@@ -12,16 +17,9 @@
   margin: 25px 15px 25px 0;
 }
 
-
 .navbar .navbar-collapse {
     text-align: center;
 }
-
-body {
-    padding-top: 80px;
-    padding-bottom: 70px;
-}
-
 
 .panel-default> .panel-footer {
     background-color: #282827;

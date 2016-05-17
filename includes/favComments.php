@@ -66,7 +66,7 @@ require("../dbconnection/appenginedbhl.php");
   </div>
 </div>
 
-<div id="msgDsp" STYLE="position: absolute; right: 0px; top: 10px;left:800px;text-align:left; FONT-SIZE: 12px;font-family: Verdana;border-style: solid;border-width: 1px;border-color:white;padding:0px;height:20px;width:250px;top:10px;z-index:1"> Edit mark </div>";
+<div id="msgDsp" STYLE="position: absolute; right: 0px; top: 10px;left:800px;text-align:left; FONT-SIZE: 12px;font-family: Verdana;border-style: solid;border-width: 1px;border-color:white;padding:0px;height:20px;width:250px;top:10px;z-index:1"> Edit mark </div>
 
 <?php
   $sql = "SELECT favs_comments.place_id, places.place_name, places.place_address, places.place_phone, places.place_website, favs_comments.comment
@@ -146,7 +146,7 @@ document.getElementById(sid).style.display = 'none'; // Hide the edit button
 
   $a = array('id'=>$id,'comment'=>$comment);
   $a = array('data'=>$a,'value'=>array("status"=>"$status","message"=>"$message"));
-  echo json_encode($a);
+  //echo json_encode($a);
 ?>
 
 <script>

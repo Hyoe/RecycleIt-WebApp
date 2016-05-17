@@ -55,12 +55,6 @@
 
   <!-- Header
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!--
-<div class="headerImg">
-</div>
--->
-
-
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -68,7 +62,7 @@
   <div class="map-container">
     <div class="container-fluid">
       <div class="row">
-        <div class=".col-xs-12 .col-sm-6 .col-md-8 .col-lg-12">
+        <div class=".col-xs-4 .col-sm-6 .col-md-8 .col-lg-12">
           <div id="map-canvas"></div>
         </div>
       </div>
