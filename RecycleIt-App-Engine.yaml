@@ -1,5 +1,5 @@
 application: recycleit-web
-version: 1
+version: 2
 module: default
 runtime: php55
 api_version: 1
@@ -17,6 +17,9 @@ handlers:
   static_files: \1
   upload: (.+\.(htm|html|css|js))$
   application_readable: true
+
+- url: /bootstrap
+  static_dir: bootstrap
 
 - url: /(.+\.php)$
   script: \1

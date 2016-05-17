@@ -18,6 +18,9 @@ handlers:
   upload: (.+\.(htm|html|css|js))$
   application_readable: true
 
+- url: /bootstrap
+  static_dir: bootstrap
+
 - url: /(.+\.php)$
   script: \1
 
