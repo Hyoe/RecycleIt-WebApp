@@ -91,8 +91,11 @@
                     <input type="text" class="form-control" aria-label="..." placeholder="Enter Location..." id="search">
                     <div class="input-group-btn">
 
-
-
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-success btn-lg" id="find-places">
+                        <span class="glyphicon glyphicon-search"></span> Find Places
+                      </button>
+                    </div>
 
                   <div class="btn-group" role="group" aria-label="...">
                     <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
@@ -107,13 +110,6 @@
                         <li><a tabindex="-1" href="#">Hazardous</a></li>
                       </ul>
                   </div>
-
-
-                    <div class="btn-group" role="group" aria-label="...">
-                      <button type="button" class="btn btn-success btn-lg" id="find-places">
-                        <span class="glyphicon glyphicon-search"></span> Find Places
-                      </button>
-                    </div>
 
                       </div>
                     </div>
