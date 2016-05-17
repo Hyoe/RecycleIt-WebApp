@@ -4,8 +4,8 @@ session_start();
 //require("../dbconnection/local_db_connection.php");
 
 if ($_POST) {
-  require("../dbconnection/appenginedbhl.php");
-  //require("../dbconnection/local_db_connection.php");
+  //require("../dbconnection/appenginedbhl.php");
+  require("../dbconnection/local_db_connection.php");
   $username = $_POST['username'];
   $password = $_POST['passwordLogin'];
 

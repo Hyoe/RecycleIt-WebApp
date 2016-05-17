@@ -1,7 +1,7 @@
 <?php
 session_start();
-require("../dbconnection/appenginedbhl.php");
-//require("../dbconnection/local_db_connection.php");
+//require("../dbconnection/appenginedbhl.php");
+require("../dbconnection/local_db_connection.php");
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +124,7 @@ var t1='t'+ id;
 
 var comment=document.getElementById(id).innerHTML; // Read the present comment
 document.getElementById(id).style.backgroundColor = '#ffff00'; // Add different color to background
-document.getElementById(id).innerHTML = '<input type=text id=' + t1 + ' value='+ comment + ' size=38> <input type=button value=Update onclick=ajax(' + id + ');>'; // Add different color to background
+document.getElementById(id).innerHTML = '<input type=text id=' + t1 + ' value='+ comment + ' size=45px> <input type=button value=Update onclick=ajax(' + id + ');>'; // Add different color to background
 document.getElementById(id).style.display = 'inline';  // show the details
 document.getElementById(sid).style.display = 'none'; // Hide the edit button
 } // end of function

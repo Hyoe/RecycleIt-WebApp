@@ -172,7 +172,7 @@ google.maps.event.addDomListener(window, "resize", function() {
             var request = { placeId: p_id};
 
             service.getDetails(request, function(details, status) {
-              infowindow.setContent('<div class="no-scroll"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + details.website + '<br><br><div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div>' + '<label for="pid"></label><input id="pid" name="pid" type="hidden" /><label for="name"></label><input id="pname" type="hidden" name="pname" /><label for="address"></label><input id="paddress" type="hidden" name="address" /><label for="phone"></label><input id="pphone" type="hidden" name="phone" /><label for="website"></label><input id="pwebsite" type="hidden" name="pwebste" /><label for="email"></abel><input id="pemail" type="hidden" name="pemail" />' + '</div>');
+              infowindow.setContent('<div class="no-scroll"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + details.website + '<br>' + '<div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div>' + '<label for="pid"></label><input id="pid" name="pid" type="hidden" /><label for="name"></label><input id="pname" type="hidden" name="pname" /><label for="address"></label><input id="paddress" type="hidden" name="address" /><label for="phone"></label><input id="pphone" type="hidden" name="phone" /><label for="website"></label><input id="pwebsite" type="hidden" name="pwebste" /><label for="email"></abel><input id="pemail" type="hidden" name="pemail" />' + '<div id="savedResponse"></div>' + '</div>');
               infowindow.open(map, marker);
               home_marker.infowindow.close();
 
@@ -194,6 +194,17 @@ google.maps.event.addDomListener(window, "resize", function() {
               var place_id = data;
               var new_option = $('<option>').attr({'data-pid' : p_id, 'data-plat' : lat, 'data-plng' : lng, 'data-pname' : p_name, 'data-paddress' : p_vicinity, 'data-pphone' : p_phone, 'data-pwebsite' : p_website}).text(place);
               new_option.appendTo($('#saved_places'));
+              //console.log(place_id);
+
+                if (place_id == 'notloggedin') {
+                  savedResponse.innerHTML = ' *** Log in to save favorites! ***';
+                }
+                else if (place_id == 'savedok') {
+                  savedResponse.innerHTML = ' *** Favorite saved. ***';
+                }
+                else {
+                  savedResponse.innerHTML = ' *** Database down, try later! ***';
+                }
             }
           );
 

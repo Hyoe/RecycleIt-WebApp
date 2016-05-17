@@ -1,6 +1,4 @@
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <div id="success">
@@ -11,4 +9,4 @@
         </div>
     </div>
 </div>
-<?php header("Refresh: 5; url=../index.php"); ?>
+<script>setTimeout(function(){window.location.href="/index.php"},5000);</script>
