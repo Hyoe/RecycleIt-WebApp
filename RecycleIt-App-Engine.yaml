@@ -21,9 +21,8 @@ handlers:
 - url: /bootstrap
   static_dir: bootstrap
 
+- url: /(.+\.php)$
+  script: \1
+
 - url: /.*
   script: index.php
-
-- url: /(.+)
-  script: \1.php
-

@@ -1,7 +1,7 @@
 <?php
 session_start();
-//require("../dbconnection/appenginedbhl.php");
-require("../dbconnection/local_db_connection.php");
+require("../dbconnection/appenginedbhl.php");
+//require("../dbconnection/local_db_connection.php");
 ?>
 <?php
 if(isset($_REQUEST['actionfunction']) && $_REQUEST['actionfunction']!=''){
