@@ -68,8 +68,8 @@ var field_name = new Array('name','address','phone','website','mType','price','c
 		pre_tds = tds;
 
         for(var j=0;j<field_arr.length-3;j++){
-
-             tdstr += "<td><input readonly type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
+            tdstr += '<td>'+$(tds[j]).html()+'</td>';
+             //tdstr += "<td><input readonly type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
         }
 
 		for(var j=4;j<field_arr.length;j++){
