@@ -5,13 +5,6 @@ session_start();
   //require("../dbconnection/appenginedbhl.php");
   require("../dbconnection/local_db_connection.php");
 
-
-
-
-
-
-
-
     if (!$_SESSION['recycleitusername']){
         //header("Location: ./includes/login.php");
         echo "notloggedin";
@@ -67,6 +60,24 @@ session_start();
                                 ":place_id" => $p_id,
                                 ":comment" => "empty"));
             echo "savedok";
+        }
+
+        //select * statment needed to account for duplicates
+        $sql = "SELECT place_id FROM materials_prices
+                WHERE place_id = :place_id";
+        $stmt = $db->prepare($sql);
+        $stmt->execute(array(":place_id" => $p_id));
+        $recordMatPri = $stmt->rowCount();
+
+        if ($_SESSION['recycleitusername'] && $recordMatPri <= 0){
+            $sql = "INSERT INTO materials_prices
+                   (place_id, material_type, material_price)
+                   VALUES (:place_id,:material_type, :material_price)";
+            $stmt = $db -> prepare($sql);
+            $stmt -> execute(array(
+                                ":place_id" => $p_id,
+                                ":material_type" => "All",
+                                ":material_price" => "0.00"));
         }
 
         if ($_SESSION['recycleitusername'] && $recordFavs > 0){

@@ -215,7 +215,7 @@ google.maps.event.addDomListener(window, "resize", function() {
 
             }
             })(marker, x));
-          }
+          } // End of for loop
 
         }
       }
