@@ -68,20 +68,19 @@ var field_name = new Array('name','address','phone','website','mType','price','c
 		pre_tds = tds;
 
         for(var j=0;j<field_arr.length-3;j++){
-            tdstr += '<td>'+$(tds[j]).html()+'</td>';
+            tdstr += '<td><div id="'+field_name[j]+'">'+$(tds[j]).html()+'</div></td>';
              //tdstr += "<td><input readonly type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
         }
 
 		for(var j=4;j<field_arr.length;j++){
 
-             tdstr += "<td><input type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
+             tdstr += "<td><input id='"+field_name[j]+"' type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
         }
 
-
-		  tdstr+="<td>"+updatebutton +" " + cancel+"</td>";
-		  $('#createinput').remove();
-		  $('#'+edittrid).html(tdstr);
-	   });
+    	  tdstr+="<td>"+updatebutton +" " + cancel+"</td>";
+    	  $('#createinput').remove();
+    	  $('#'+edittrid).html(tdstr);
+ });
 
 	   $('#tableAjax').on('click','#ajaxupdate',function(){
        var edittrid = $(this).parent().parent().attr('id');
@@ -145,7 +144,7 @@ var field_name = new Array('name','address','phone','website','mType','price','c
 
   var blankrow = "<tr id='createinput'>";
   for(var i=0;i<field_arr.length;i++){
-	  blankrow+= "<td class='ajaxreq'><input type='"+field_arr[i]+"' name='"+field_name[i]+"' placeholder='"+field_pre_text[i]+"' /></td>";
+	  blankrow+= "<td class='ajaxreq'><input id='"+field_name[i]+"' type='"+field_arr[i]+"' name='"+field_name[i]+"' placeholder='"+field_pre_text[i]+"' /></td>";
 	}
 	blankrow+="<td class='ajaxreq'>"+savebutton+"</td></tr>";
   $('#tableAjax').append(blankrow);

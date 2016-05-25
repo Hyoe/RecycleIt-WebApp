@@ -61,9 +61,9 @@ function showData($data,$db){
     '<td>'.$fav['place_address'].'</td>'.
     '<td>'.$fav['place_phone'].'</td>'.
     '<td>'.$fav['place_website'].'</td>'.
-    '<td STYLE="width:180px;">'.$fav['material_type'].'</td>'.
-    '<td STYLE="width:54px;">'.$fav['material_price'].'</td>'.
-    '<td STYLE="width:340px;">'.$fav['comment'].'</td>'.
+    '<td>'.$fav['material_type'].'</td>'.
+    '<td>'.$fav['material_price'].'</td>'.
+    '<td>'.$fav['comment'].'</td>'.
     '<td><input type="button" id="ajaxedit" class="btn btn-success" value="Edit"></td>'.
     '<td><input type="button" id="ajaxdelete" class="btn btn-danger" value="Delete"></td>'.
     '</tr>';
@@ -89,8 +89,6 @@ $sql = "UPDATE favs_comments JOIN materials_prices
   $data->execute(array(":type" => $type, ":price" => $price, ":comment" => $comment, ":username" => $_SESSION['recycleitusername'], ":place_id" => $placeid));
   $data->fetchAll();
      showData($data,$db);
-
-
 }
 
 

@@ -1,3 +1,27 @@
 .hidden {
     display: none;
 }
+
+#mType {
+    width: 180px;
+}
+
+#price {
+    width: 54px;
+}
+
+#comment {
+    width: 334px;
+}
+
+#phone {
+    width: 86px;
+}
+
+#website {
+    width: 216px;
+}
+
+#address {
+    width: 200px;
+}
