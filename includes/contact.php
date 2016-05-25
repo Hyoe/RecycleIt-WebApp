@@ -64,7 +64,7 @@
     $to = 'hyolee@csumb.edu';
     $subject = 'Recycle It! Contact';
 
-    $body = "From: $name\n Email: $email\n Message:\n $message";
+    $body = "From: $name\nEmail: $email\nMessage:\n$message";
 
     if (!$_POST['name']) {
       $errName = "Please enter your name";
