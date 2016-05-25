@@ -12,11 +12,8 @@ if(isset($_REQUEST['actionfunction']) && $_REQUEST['actionfunction']!=''){
 
 
 function saveData($data,$db){
-   $fname = $db->real_escape_string($data['fname']);
-   $lname = $db->real_escape_string($data['lname']);
-   $domain = $db->real_escape_string($data['domain']);
-   $email = $db->real_escape_string($data['email']);
-   $sql = "insert into ajaxtable(firstname,lastname,domain,email) values('$fname','$lname','$domain','$email')";
+
+
    if($db->query($sql)){
        showData($data,$db);
    }

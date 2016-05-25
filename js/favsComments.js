@@ -153,10 +153,6 @@ var field_name = new Array('name','address','phone','website','mType','price','c
 
 function validate(price){
 var contact = jQuery('input[name=contact]');
-
-
-
-
         /*
 
 		if (name.val()=='') {
