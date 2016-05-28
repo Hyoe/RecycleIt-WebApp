@@ -36,7 +36,7 @@ function initMap() {
     mapTypeControl: true,
     mapTypeControlOptions: {
       position: google.maps.ControlPosition.LEFT_BOTTOM
-},
+    },
   });
 
 google.maps.event.addDomListener(window, "resize", function() {
@@ -83,6 +83,7 @@ google.maps.event.addDomListener(window, "resize", function() {
       home_marker.setPosition(place.geometry.location); //plot marker into the coordinates of the location
   });
 
+
   // Global variables (Ugly implementation)
   var markers_array = [];
   var p_id;
@@ -118,7 +119,6 @@ google.maps.event.addDomListener(window, "resize", function() {
     removeMarkers(); //remove the current place type markers from the map
 
     //make a request to the server for the matching places
-
     $.post(
       'places.php',
       {
@@ -157,7 +157,7 @@ google.maps.event.addDomListener(window, "resize", function() {
             //assign an infowindow to the marker so that when its clicked it shows the name of the place
             google.maps.event.addListener(marker, 'click', (function(marker, x){
               return function(){
-                infowindow.setContent("<div class='no-scroll'><strong>" + results[x]['name'] + "</strong><br>" + results[x]['vicinity'] +  results[x]['place_id'] + "</div>");
+                //infowindow.setContent("<div class='no-scroll'><strong>" + results[x]['name'] + "</strong><br>" + results[x]['vicinity'] +  results[x]['place_id'] + "</div>");
                 //infowindow.open(map, marker);
 
                 // Set variables from marker windows
@@ -169,10 +169,43 @@ google.maps.event.addDomListener(window, "resize", function() {
 
 
             //var service = new google.maps.places.PlacesService(map);
-            var request = { placeId: p_id};
+            var request = { placeId: p_id };
 
             service.getDetails(request, function(details, status) {
-              infowindow.setContent('<div class="no-scroll"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + details.website + '<br>' + '<div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div>' + '<label for="pid"></label><input id="pid" name="pid" type="hidden" /><label for="name"></label><input id="pname" type="hidden" name="pname" /><label for="address"></label><input id="paddress" type="hidden" name="address" /><label for="phone"></label><input id="pphone" type="hidden" name="phone" /><label for="website"></label><input id="pwebsite" type="hidden" name="pwebste" /><label for="email"></abel><input id="pemail" type="hidden" name="pemail" />' + '<div id="savedResponse"></div>' + '</div>');
+              infowindow.setContent('<div class="no-scroll"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + '<a href="' + details.website + '" target="_blank">' + details.website + '</a>' + '<div id="addReinburse"></div>' + '<div id="addType"></div>' + '<div id="addComment"></div>' + '<div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div>' + '<label for="pid"></label><input id="pid" name="pid" type="hidden" /><label for="name"></label><input id="pname" type="hidden" name="pname" /><label for="address"></label><input id="paddress" type="hidden" name="address" /><label for="phone"></label><input id="pphone" type="hidden" name="phone" /><label for="website"></label><input id="pwebsite" type="hidden" name="pwebste" /><label for="email"></abel><input id="pemail" type="hidden" name="pemail" />' + '<div id="savedResponse"></div>' + '</div>');
+
+
+
+              $.getJSON('/includes/dbCRUD.php',function(data){
+                  if(data.success == true) {
+                      if(data.data.length > 0){
+                          $.each(data.data,function(index, value){
+                              id = data.data[index].place_id;
+                              mb = data.data[index].material_reimburse;
+                              type = data.data[index].material_type;
+                              comment = data.data[index].comment;
+                              addDbData(id, mb, type, comment);
+                              //console.log(id, p_id);
+                          });
+                      }
+                  }
+              });
+
+                  function addDbData(id, mb, type, comment){
+                      if (p_id == id) {
+                        //console.log(mb, 'already in favorites');
+                        addReinburse.innerHTML = 'Reinburse?: ' + mb;
+                        addType.innerHTML = 'Materials Accepted: ' + type;
+                        addComment.innerHTML = 'Comment: ' + comment;
+                      }
+                      else {
+                        //console.log('not in favorites');
+                        //addReinburse.innerHTML = 'Reinburse?: Save to Favorites to add reinbursement';
+                        //addType.innerHTML = 'Materials Accepted: Save to Favorites to add materials';
+                        //addComment.innerHTML = 'Comment: Save to Favorites to comment';
+                      }
+                  }
+
               infowindow.open(map, marker);
               home_marker.infowindow.close();
 
@@ -180,36 +213,37 @@ google.maps.event.addDomListener(window, "resize", function() {
               p_phone = details.formatted_phone_number;
               p_website = details.website;
 
-          $('#btn_save').click(function(){
-          var pid = $.trim($('#pid').val());
-          var pname = $.trim($('#pname').val());
-          var paddress = $.trim($('#paddress').val());
-          var pphone = $.trim($('#pphone').val());
-          var pwebsite = $.trim($('#pwebsite').val());
-          var plat = marker.getPosition().lat();
-          var plng = marker.getPosition().lng();
+                $('#btn_save').click(function(){
+                var pid = $.trim($('#pid').val());
+                var pname = $.trim($('#pname').val());
+                var paddress = $.trim($('#paddress').val());
+                var pphone = $.trim($('#pphone').val());
+                var pwebsite = $.trim($('#pwebsite').val());
+                var plat = marker.getPosition().lat();
+                var plng = marker.getPosition().lng();
 
-          $.post('/includes/save_place.php', {'pid' : p_id, 'plat' : lat, 'plng' : lng, 'pname' : p_name, 'paddress' : p_vicinity, 'pphone' : p_phone, 'pwebsite' : p_website},
-            function(data){
-              var place_id = data;
-              var new_option = $('<option>').attr({'data-pid' : p_id, 'data-plat' : lat, 'data-plng' : lng, 'data-pname' : p_name, 'data-paddress' : p_vicinity, 'data-pphone' : p_phone, 'data-pwebsite' : p_website}).text(place);
-              new_option.appendTo($('#saved_places'));
-              //console.log(place_id);
+                  $.post('/includes/save_place.php', {'pid' : p_id, 'plat' : lat, 'plng' : lng, 'pname' : p_name, 'paddress' : p_vicinity, 'pphone' : p_phone, 'pwebsite' : p_website},
+                    function(data){
+                      var place_id = data;
+                      var new_option = $('<option>').attr({'data-pid' : p_id, 'data-plat' : lat, 'data-plng' : lng, 'data-pname' : p_name, 'data-paddress' : p_vicinity, 'data-pphone' : p_phone, 'data-pwebsite' : p_website}).text(place);
+                      new_option.appendTo($('#saved_places'));
+                      //console.log(place_id);
 
-                if (place_id == 'notloggedin') {
-                  savedResponse.innerHTML = ' *** Log in to save favorites! ***';
-                }
-                else if (place_id == 'savedok') {
-                  savedResponse.innerHTML = ' *** Favorite saved. ***';
-                }
-                else {
-                  savedResponse.innerHTML = ' *** Database down, try later! ***';
-                }
-            }
-          );
+                        if (place_id == 'notloggedin') {
+                          savedResponse.innerHTML = ' *** Log in to save favorites! ***';
+                        }
+                        else if (place_id == 'savedok') {
+                          savedResponse.innerHTML = ' *** Favorite saved. ***';
+                        }
+                        else {
+                          savedResponse.innerHTML = ' *** Database down, try later! ***';
+                        }
+                    }
+                  );
 
-          $('input[type=text], input[type=hidden]').val('');
-        });
+                  $('input[type=text], input[type=hidden]').val('');
+
+                });
 
             });
 

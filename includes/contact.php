@@ -61,7 +61,7 @@
     $email = $_POST['email'];
     $message = $_POST['message'];
     $from = 'Recycle It! User';
-    $to = 'hyolee@csumb.edu';
+    $to = 'hyolee@csumb.edu,jedunham@csumb.edu';
     $subject = 'Recycle It! Contact';
 
     $body = "From: $name\nEmail: $email\nMessage:\n$message";

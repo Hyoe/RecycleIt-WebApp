@@ -2,8 +2,8 @@
 session_start();
 ?>
 <?php
-  require("../dbconnection/appenginedbhl.php");
-  //require("../dbconnection/local_db_connection.php");
+  //require("../dbconnection/appenginedbhl.php");
+  require("../dbconnection/local_db_connection.php");
 
     if (!$_SESSION['recycleitusername']){
         //header("Location: ./includes/login.php");
@@ -71,13 +71,13 @@ session_start();
 
         if ($_SESSION['recycleitusername'] && $recordMatPri <= 0){
             $sql = "INSERT INTO materials_prices
-                   (place_id, material_type, material_price)
-                   VALUES (:place_id,:material_type, :material_price)";
+                   (place_id, material_type, material_reimburse)
+                   VALUES (:place_id, :material_type, :material_reimburse)";
             $stmt = $db -> prepare($sql);
             $stmt -> execute(array(
                                 ":place_id" => $p_id,
-                                ":material_type" => "All",
-                                ":material_price" => "0.00"));
+                                ":material_type" => "",
+                                ":material_reimburse" => ""));
         }
 
         if ($_SESSION['recycleitusername'] && $recordFavs > 0){

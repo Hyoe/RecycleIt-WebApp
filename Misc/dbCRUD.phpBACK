@@ -10,6 +10,7 @@ if(isset($_REQUEST['actionfunction']) && $_REQUEST['actionfunction']!=''){
     call_user_func($actionfunction,$_REQUEST,$db);
 }
 
+
 function saveData($data,$db){
 
 
@@ -23,7 +24,7 @@ function saveData($data,$db){
 
 function showData($data,$db){
 
-  $sql = "SELECT favs_comments.place_id, places.place_name, places.place_address, places.place_phone, places.place_website, favs_comments.comment, materials_prices.material_reimburse, materials_prices.material_type
+  $sql = "SELECT favs_comments.place_id, places.place_name, places.place_address, places.place_phone, places.place_website, favs_comments.comment, materials_prices.material_price, materials_prices.material_type
   FROM places JOIN favs_comments
   ON places.place_id = favs_comments.place_id
   JOIN materials_prices
@@ -41,7 +42,7 @@ function showData($data,$db){
           <th>Phone</th>
           <th>Website</th>
           <th>Material Type</th>
-          <th>Reimburse?</th>
+          <th>Price</th>
           <th>Comment</th>
           <th>Edit</th>
           <th>Delete</th>
@@ -56,15 +57,14 @@ function showData($data,$db){
     '<td>'.$fav['place_name'].'</td>'.
     '<td>'.$fav['place_address'].'</td>'.
     '<td>'.$fav['place_phone'].'</td>'.
-    '<td><a href="'.$fav['place_website'].'" target="_blank">'.$fav['place_website'].'</a></td>'.
+    '<td>'.$fav['place_website'].'</td>'.
     '<td>'.$fav['material_type'].'</td>'.
-    '<td>'.$fav['material_reimburse'].'</td>'.
+    '<td>'.$fav['material_price'].'</td>'.
     '<td>'.$fav['comment'].'</td>'.
     '<td><input type="button" id="ajaxedit" class="btn btn-success" value="Edit"></td>'.
     '<td><input type="button" id="ajaxdelete" class="btn btn-danger" value="Delete"></td>'.
     '</tr>';
 }
-
 
 echo $tableResults;
 
@@ -74,16 +74,16 @@ function updateData($data,$db){
 
 $placeid = $data['editid'];
 $type = $data['mType'];
-$reimburse = $data['reimburse'];
+$price = $data['price'];
 $comment = $data['comment'];
 
 $sql = "UPDATE favs_comments JOIN materials_prices
-          SET favs_comments.comment = :comment, materials_prices.material_type = :type, materials_prices.material_reimburse = :reimburse
+          SET favs_comments.comment = :comment, materials_prices.material_type = :type, materials_prices.material_price = :price
           WHERE favs_comments.place_id = materials_prices.place_id
           AND username = :username
           AND materials_prices.place_id = :place_id";
   $data=$db->prepare($sql);
-  $data->execute(array(":type" => $type, ":reimburse" => $reimburse, ":comment" => $comment, ":username" => $_SESSION['recycleitusername'], ":place_id" => $placeid));
+  $data->execute(array(":type" => $type, ":price" => $price, ":comment" => $comment, ":username" => $_SESSION['recycleitusername'], ":place_id" => $placeid));
   $data->fetchAll();
      showData($data,$db);
 }
@@ -101,24 +101,4 @@ function deleteData($data,$db){
         showData($data,$db);
 
 }
-
-
-//function updateInfoWindow(){
-
-  $response['success'] = false;
-
-  $sql = "SELECT * FROM materials_prices";
-  $data=$db->prepare($sql);
-  $data->execute(array());
-  $favs=$data->fetchAll();
-
-  if (!empty($favs)) {
-    $response['success'] = true;
-    $response['data'] = $favs;
-  }
-  echo json_encode($response);
-
-//}
-
-
 ?>

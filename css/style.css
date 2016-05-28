@@ -6,12 +6,12 @@
     width: 180px;
 }
 
-#price {
-    width: 54px;
+#reimburse {
+    width: 80px;
 }
 
 #comment {
-    width: 334px;
+    width: 332px;
 }
 
 #phone {
@@ -23,5 +23,9 @@
 }
 
 #address {
-    width: 200px;
+    width: 180px;
+}
+
+table {
+    height: 400px;
 }
