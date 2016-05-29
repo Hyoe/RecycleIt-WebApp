@@ -25,6 +25,7 @@
   <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/nav.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/map.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -33,6 +34,7 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="/bootstrap/js/bootstrap.min.js"></script>
   <script src="/js/map.js" type="text/javascript" ></script>
+  <script src="/js/favsComments.js"></script>
 
   <!-- JQUERY VALIDATE CDNS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -50,6 +52,8 @@
 
 <body>
 
+<script src="/js/bootstrap-dropdown-checkbox.js" type="text/javascript" ></script>
+
 <?php include(__DIR__ . "/nav.php") ?>
 
 
@@ -59,20 +63,78 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <div class="map-container">
-    <div class="container-fluid">
-      <div class="row">
-        <div class=".col-xs-4 .col-sm-6 .col-md-8 .col-lg-12">
-          <div id="map-canvas"></div>
+<div class="map-container">
+  <div id="map-canvas"></div>
+</div>
+
+
+<?php
+  if ($_SESSION['recycleitusername']) {
+?>
+
+<div class="search-container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <form class="form-inline">
+
+          <div class="panel-default">
+
+                <div class="btn-toolbar" role="toolbar" aria-label="...">
+                  <div class="btn-group" role="group" aria-label="...">
+
+                  <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" aria-label="..." placeholder="Enter Location..." id="search">
+                    <div class="input-group-btn">
+
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-success btn-lg" id="find-places">
+                        <span class="glyphicon glyphicon-search"></span> Find Places
+                      </button>
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default btn-lg" id="favsButton">
+                        <span class="glyphicon glyphicon-star"></span> Favorites
+                      </button>
+                    </div>
+
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
+                    </button>
+                      <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="#">All Materials</a></li>
+                        <li><a tabindex="-1" href="#">Metals</a></li>
+                        <li><a tabindex="-1" href="#">Pastic</a></li>
+                        <li><a tabindex="-1" href="#">Electronics</a></li>
+                        <li><a tabindex="-1" href="#">Paper</a></li>
+                        <li><a tabindex="-1" href="#">Batteries</a></li>
+                        <li><a tabindex="-1" href="#">Hazardous</a></li>
+                      </ul>
+                  </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+<?php
+  }
+  else {
+?>
+
 <div class="search-container">
   <div class="container-fluid">
     <div class="row">
-      <div class=".col-md-12">
+      <div class="col-md-12">
         <div class="form-group">
           <form class="form-inline">
 
@@ -116,6 +178,29 @@
       </div>
     </div>
   </div>
+<?php } ?>
+
+<div class="container-fluid" id="favoritesDiv">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="panel panel-default" id="fragment">
+        <div class="panel-heading"><?php echo $_SESSION['recycleitusername']?>'s favorites & comments page<span id="close">X</span></div>
+          <div class="table-responsive">
+            <table class="table" id="tableAjax">
+
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('#favsButton, #close').click(function() {
+    $('#favoritesDiv').toggle();
+  });
+</script>
 
 
 <!--

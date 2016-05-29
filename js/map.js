@@ -173,6 +173,8 @@ google.maps.event.addDomListener(window, "resize", function() {
 
             service.getDetails(request, function(details, status) {
               infowindow.setContent('<div class="no-scroll"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + '<a href="' + details.website + '" target="_blank">' + details.website + '</a>' + '<div id="addReinburse"></div>' + '<div id="addType"></div>' + '<div id="addComment"></div>' + '<div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div>' + '<label for="pid"></label><input id="pid" name="pid" type="hidden" /><label for="name"></label><input id="pname" type="hidden" name="pname" /><label for="address"></label><input id="paddress" type="hidden" name="address" /><label for="phone"></label><input id="pphone" type="hidden" name="phone" /><label for="website"></label><input id="pwebsite" type="hidden" name="pwebste" /><label for="email"></abel><input id="pemail" type="hidden" name="pemail" />' + '<div id="savedResponse"></div>' + '</div>');
+              infowindow.open(map, marker);
+              home_marker.infowindow.close();
 
 
 
@@ -194,7 +196,7 @@ google.maps.event.addDomListener(window, "resize", function() {
                   function addDbData(id, mb, type, comment){
                       if (p_id == id) {
                         //console.log(mb, 'already in favorites');
-                        addReinburse.innerHTML = 'Reinburse?: ' + mb;
+                        addReinburse.innerHTML = 'Reimburse?: ' + mb;
                         addType.innerHTML = 'Materials Accepted: ' + type;
                         addComment.innerHTML = 'Comment: ' + comment;
                       }
@@ -206,8 +208,7 @@ google.maps.event.addDomListener(window, "resize", function() {
                       }
                   }
 
-              infowindow.open(map, marker);
-              home_marker.infowindow.close();
+
 
             //console.log(details.formatted_phone_number);
               p_phone = details.formatted_phone_number;

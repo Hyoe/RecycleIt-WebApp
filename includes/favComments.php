@@ -47,10 +47,6 @@ session_start();
   <link rel="icon" type="image/png" href="/images/icon1.png">
 
 
-
-
-
-
 </head>
 
 <body>
@@ -86,13 +82,6 @@ session_start();
         </div>
       </div>
     </div>
-
-
-<script>
-
-</script>
-
-
 
 <?php include(__DIR__ . "/footer.php") ?>
 
