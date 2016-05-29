@@ -45,9 +45,10 @@ session_start();
 
         //select * statment needed to account for duplicates
         $sql = "SELECT place_id FROM favs_comments
-                WHERE place_id = :place_id";
+                WHERE place_id = :place_id
+                AND username = :username";
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(":place_id" => $p_id));
+        $stmt->execute(array(":place_id" => $p_id, ":username" => $_SESSION['recycleitusername']));
         $recordFavs = $stmt->rowCount();
 
         if ($_SESSION['recycleitusername'] && $recordFavs <= 0){

@@ -67,7 +67,6 @@
   <div id="map-canvas"></div>
 </div>
 
-
 <?php
   if ($_SESSION['recycleitusername']) {
 ?>
@@ -78,53 +77,51 @@
       <div class="col-md-12">
         <div class="form-group">
           <form class="form-inline">
-
-          <div class="panel-default">
-
-                <div class="btn-toolbar" role="toolbar" aria-label="...">
-                  <div class="btn-group" role="group" aria-label="...">
+            <div class="panel-default">
+              <div class="btn-toolbar" role="toolbar" aria-label="...">
+                <div class="btn-group" role="group" aria-label="...">
 
                   <div class="input-group input-group-lg">
-                    <input type="text" class="form-control" aria-label="..." placeholder="Enter Location..." id="search">
-                    <div class="input-group-btn">
+                      <input type="text" class="form-control" aria-label="..." placeholder="Enter Location..." id="search">
+                      <div class="input-group-btn">
 
-                    <div class="btn-group" role="group" aria-label="...">
-                      <button type="button" class="btn btn-success btn-lg" id="find-places">
-                        <span class="glyphicon glyphicon-search"></span> Find Places
-                      </button>
-                    </div>
-
-                    <div class="btn-group" role="group" aria-label="...">
-                      <button type="button" class="btn btn-default btn-lg" id="favsButton">
-                        <span class="glyphicon glyphicon-star"></span> Favorites
-                      </button>
-                    </div>
-
-                  <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
-                    </button>
-                      <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="#">All Materials</a></li>
-                        <li><a tabindex="-1" href="#">Metals</a></li>
-                        <li><a tabindex="-1" href="#">Pastic</a></li>
-                        <li><a tabindex="-1" href="#">Electronics</a></li>
-                        <li><a tabindex="-1" href="#">Paper</a></li>
-                        <li><a tabindex="-1" href="#">Batteries</a></li>
-                        <li><a tabindex="-1" href="#">Hazardous</a></li>
-                      </ul>
-                  </div>
-
+                      <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-success btn-lg" id="find-places">
+                          <span class="glyphicon glyphicon-search"></span> Find Places
+                        </button>
                       </div>
+
+                      <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default btn-lg" id="favsButton">
+                          <span class="glyphicon glyphicon-star"></span> Favorites
+                        </button>
+                      </div>
+
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
+                      </button>
+                        <ul class="dropdown-menu">
+                          <li><a tabindex="-1" href="#">All Materials</a></li>
+                          <li><a tabindex="-1" href="#">Metals</a></li>
+                          <li><a tabindex="-1" href="#">Pastic</a></li>
+                          <li><a tabindex="-1" href="#">Electronics</a></li>
+                          <li><a tabindex="-1" href="#">Paper</a></li>
+                          <li><a tabindex="-1" href="#">Batteries</a></li>
+                          <li><a tabindex="-1" href="#">Hazardous</a></li>
+                        </ul>
+                    </div>
                     </div>
                   </div>
+
                 </div>
-                </div>
-            </form>
-          </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <?php
   }
@@ -137,38 +134,36 @@
       <div class="col-md-12">
         <div class="form-group">
           <form class="form-inline">
+            <div class="panel-default">
+              <div class="btn-toolbar" role="toolbar" aria-label="...">
+                <div class="btn-group" role="group" aria-label="...">
 
-          <div class="panel-default">
+                      <div class="input-group input-group-lg">
+                          <input type="text" class="form-control" aria-label="..." placeholder="Enter Location..." id="search">
+                          <div class="input-group-btn">
 
-                <div class="btn-toolbar" role="toolbar" aria-label="...">
-                  <div class="btn-group" role="group" aria-label="...">
+                          <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-success btn-lg" id="find-places">
+                              <span class="glyphicon glyphicon-search"></span> Find Places
+                            </button>
+                          </div>
 
-                  <div class="input-group input-group-lg">
-                    <input type="text" class="form-control" aria-label="..." placeholder="Enter Location..." id="search">
-                    <div class="input-group-btn">
+                        <div class="btn-group" role="group" aria-label="...">
+                          <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
+                          </button>
+                            <ul class="dropdown-menu">
+                              <li><a tabindex="-1" href="#">All Materials</a></li>
+                              <li><a tabindex="-1" href="#">Metals</a></li>
+                              <li><a tabindex="-1" href="#">Pastic</a></li>
+                              <li><a tabindex="-1" href="#">Electronics</a></li>
+                              <li><a tabindex="-1" href="#">Paper</a></li>
+                              <li><a tabindex="-1" href="#">Batteries</a></li>
+                              <li><a tabindex="-1" href="#">Hazardous</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                      </div>
 
-                    <div class="btn-group" role="group" aria-label="...">
-                      <button type="button" class="btn btn-success btn-lg" id="find-places">
-                        <span class="glyphicon glyphicon-search"></span> Find Places
-                      </button>
-                    </div>
-
-                  <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
-                    </button>
-                      <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="#">All Materials</a></li>
-                        <li><a tabindex="-1" href="#">Metals</a></li>
-                        <li><a tabindex="-1" href="#">Pastic</a></li>
-                        <li><a tabindex="-1" href="#">Electronics</a></li>
-                        <li><a tabindex="-1" href="#">Paper</a></li>
-                        <li><a tabindex="-1" href="#">Batteries</a></li>
-                        <li><a tabindex="-1" href="#">Hazardous</a></li>
-                      </ul>
-                  </div>
-
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -194,7 +189,6 @@
     </div>
   </div>
 </div>
-
 
 <script>
   $('#favsButton, #close').click(function() {
@@ -222,8 +216,6 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApN6i2gKLF_3nzPGWacafhqZAow0UPJK0&libraries=places&callback=initMap" async defer>
 </script>
-
-
 
 
 <?php include(__DIR__ . "/footer.php") ?>

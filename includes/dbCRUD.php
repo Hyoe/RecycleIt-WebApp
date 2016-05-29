@@ -48,22 +48,27 @@ function showData($data,$db){
       </tr>
   </thead>';
 
-  foreach ($favs as $fav) {
-    $id = $fav['place_id'];
-    $tableResults .=
-    '<tr id='.$id.'>'.
-    '<td>'.$fav['place_name'].'</td>'.
-    '<td>'.$fav['place_address'].'</td>'.
-    '<td>'.$fav['place_phone'].'</td>'.
-    '<td><a href="'.$fav['place_website'].'" target="_blank">'.$fav['place_website'].'</a></td>'.
-    '<td>'.$fav['material_type'].'</td>'.
-    '<td>'.$fav['material_reimburse'].'</td>'.
-    '<td>'.$fav['comment'].'</td>'.
-    '<td><input type="button" id="ajaxedit" class="btn btn-success" value="Edit"></td>'.
-    '<td><input type="button" id="ajaxdelete" class="btn btn-danger" value="Delete"></td>'.
-    '</tr>';
+  if ($data->rowCount()>0) {
+    foreach ($favs as $fav) {
+      $id = $fav['place_id'];
+      $tableResults .=
+      '<tr id='.$id.'>'.
+      '<td>'.$fav['place_name'].'</td>'.
+      '<td>'.$fav['place_address'].'</td>'.
+      '<td>'.$fav['place_phone'].'</td>'.
+      '<td><a href="'.$fav['place_website'].'" target="_blank">'.$fav['place_website'].'</a></td>'.
+      '<td>'.$fav['material_type'].'</td>'.
+      '<td>'.$fav['material_reimburse'].'</td>'.
+      '<td>'.$fav['comment'].'</td>'.
+      '<td><input type="button" id="ajaxedit" class="btn btn-success" value="Edit"></td>'.
+      '<td><input type="button" id="ajaxdelete" class="btn btn-danger" value="Delete"></td>'.
+      '</tr>';
+    }
   }
-echo $tableResults;
+  else {
+    $tableResults .= '<td colspan="5">Add favorites to edit them here</td>';
+  }
+  echo $tableResults;
 }
 
 function updateData($data,$db){
