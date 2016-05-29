@@ -48,7 +48,6 @@ function showData($data,$db){
       </tr>
   </thead>';
 
-
   foreach ($favs as $fav) {
     $id = $fav['place_id'];
     $tableResults .=
@@ -63,11 +62,8 @@ function showData($data,$db){
     '<td><input type="button" id="ajaxedit" class="btn btn-success" value="Edit"></td>'.
     '<td><input type="button" id="ajaxdelete" class="btn btn-danger" value="Delete"></td>'.
     '</tr>';
-}
-
-
+  }
 echo $tableResults;
-
 }
 
 function updateData($data,$db){
@@ -88,7 +84,6 @@ $sql = "UPDATE favs_comments JOIN materials_prices
      showData($data,$db);
 }
 
-
 function deleteData($data,$db){
 
   $placeid = $data['deleteid'];
@@ -99,10 +94,9 @@ function deleteData($data,$db){
     $data = $db -> prepare($sql);
     $data -> execute(array(":place_id" => $placeid, ":username" => $_SESSION['recycleitusername']));
         showData($data,$db);
-
 }
 
-// Json back to map
+// Json reimburse, material types, and comments back to map
   $response['success'] = false;
 
   $sql = "SELECT materials_prices.place_id, materials_prices.material_type, materials_prices.material_reimburse, favs_comments.comment

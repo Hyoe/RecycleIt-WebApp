@@ -62,7 +62,11 @@ $(document).ready(function()
         else if(data.indexOf("registered") > -1)
         {
           $("#login-submit").html('<img src="../images/default.gif" /> &nbsp; SIGNING IN ...');
-          setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("../index.php"); }); ',2000);
+          setTimeout(function(){ window.location.replace('/includes/search.php'); }, 1200);
+          /*
+          $("#login-submit").html('<img src="../images/default.gif" /> &nbsp; SIGNING IN ...');
+          setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("../index.php"); }); ',1000);
+          */
         }
         else {
           $("#error").fadeIn(1000, function(){
