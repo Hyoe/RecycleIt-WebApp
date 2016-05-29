@@ -176,8 +176,7 @@ google.maps.event.addDomListener(window, "resize", function() {
               infowindow.open(map, marker);
               home_marker.infowindow.close();
 
-
-
+              // Receive Json from dbCRUD.php
               $.getJSON('/includes/dbCRUD.php',function(data){
                   if(data.success == true) {
                       if(data.data.length > 0){
@@ -193,22 +192,15 @@ google.maps.event.addDomListener(window, "resize", function() {
                   }
               });
 
-                  function addDbData(id, mb, type, comment){
-                      if (p_id == id) {
-                        //console.log(mb, 'already in favorites');
-                        addReinburse.innerHTML = 'Reimburse?: ' + mb;
-                        addType.innerHTML = 'Materials Accepted: ' + type;
-                        addComment.innerHTML = 'Comment: ' + comment;
-                      }
-                      else {
-                        //console.log('not in favorites');
-                        //addReinburse.innerHTML = 'Reinburse?: Save to Favorites to add reinbursement';
-                        //addType.innerHTML = 'Materials Accepted: Save to Favorites to add materials';
-                        //addComment.innerHTML = 'Comment: Save to Favorites to comment';
-                      }
-                  }
-
-
+              // Function to add db data to infowindow divs
+              function addDbData(id, mb, type, comment){
+                if (p_id == id) {
+                  //console.log(mb, 'already in favorites');
+                  addReinburse.innerHTML = 'Reimburse?: ' + mb;
+                  addType.innerHTML = 'Materials Accepted: ' + type;
+                  addComment.innerHTML = 'Comment: ' + comment;
+                }
+              }
 
             //console.log(details.formatted_phone_number);
               p_phone = details.formatted_phone_number;

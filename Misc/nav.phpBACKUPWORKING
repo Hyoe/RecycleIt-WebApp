@@ -24,6 +24,7 @@ session_start();
               <li><a href="/includes/search.php"><span class="glyphicon glyphicon-map-marker"></span> SEARCH</a></li>
               <li><a href="/includes/learn.php"><span class="glyphicon glyphicon-leaf"></span> RECYCLING GUIDE</a></li>
               <li><a href="/includes/contact.php"><span class="glyphicon glyphicon-envelope"></span> CONTACT</a></li>
+              <li><a href="/includes/favComments.php"><span class="glyphicon glyphicon-star"></span> FAVORITES</a></li>
               <li><a href="/includes/logout.php"><span class="glyphicon glyphicon-log-out"></span> LOG OUT</a></li>
             </ul>
           </div>

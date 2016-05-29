@@ -102,12 +102,13 @@ function deleteData($data,$db){
 
 }
 
-
-//function updateInfoWindow(){
-
+// Json back to map
   $response['success'] = false;
 
-  $sql = "SELECT * FROM materials_prices";
+  $sql = "SELECT materials_prices.place_id, materials_prices.material_type, materials_prices.material_reimburse, favs_comments.comment
+          FROM materials_prices
+          JOIN favs_comments
+          ON materials_prices.place_id = favs_comments.place_id";
   $data=$db->prepare($sql);
   $data->execute(array());
   $favs=$data->fetchAll();
@@ -117,8 +118,5 @@ function deleteData($data,$db){
     $response['data'] = $favs;
   }
   echo json_encode($response);
-
-//}
-
 
 ?>
