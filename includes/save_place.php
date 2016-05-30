@@ -80,10 +80,6 @@ session_start();
                                 ":material_type" => "",
                                 ":material_reimburse" => ""));
         }
-
-        if ($_SESSION['recycleitusername'] && $recordFavs > 0){
-            echo "savedok";
-        }
     }
 
 

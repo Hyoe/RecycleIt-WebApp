@@ -11,8 +11,6 @@ var field_arr = new Array('text', 'text', 'text', 'text', 'text', 'text', 'text'
 var field_pre_text= new Array('Enter name','Enter address','Enter phone','Enter website','Enter material types','Enter price','Enter comment');
 var field_name = new Array('name','address','phone','website','mType','reimburse','comment');
 
-var mTypeValue='';
-
 $(function(){
   $.ajax({
 	  url:"/includes/dbCRUD.php",
@@ -72,7 +70,13 @@ $(function(){
         }
 
 		    for(var j=4;j<field_arr.length-2;j++){
-          tdstr += "<td><div class='myDropdownCheckbox dropdown-checkbox-nbselected' name='dropdown'></div></td>";
+          tdstr += '<td><div class="checkbox"><label><input name="materials" type="checkbox" value="Aluminum"> Aluminum</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Copper"> Copper</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Electronics"> Electronics</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Glass"> Glass</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Household Hazardous Waste"> Household Hazardous Waste</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Paper"> Paper</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Plastic"> Plastic</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Steel"> Steel</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value="'+$(tds[j]).html()+'" class="hidden" checked="checked"></label></td>';
+
+
+          //<select id='mType' class='form-control' multiple='multiple'><option value='Aluminum'>Aluminum</option><option value='Steel'>Steel</option><option value='Copper'>Copper</option><option value='Plastic'>Plastic</option><option value='Glass'>Glass</option><option value='Paper'>Paper</option><option value='Electronics'>Electronics</option><option value='Household Hazardous Waste'>Household Hazardous Waste</option></select></td>";
+
+
+
           //tdstr += "<td><select id='mType' class='form-control' multiple='multiple'><option value='Aluminum'>Aluminum</option><option value='Steel'>Steel</option><option value='Copper'>Copper</option><option value='Plastic'>Plastic</option><option value='Glass'>Glass</option><option value='Paper'>Paper</option><option value='Electronics'>Electronics</option><option value='Household Hazardous Waste'>Household Hazardous Waste</option></select></td>";
 
           //tdstr += "<td><input id='"+field_name[j]+"' type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
@@ -93,20 +97,25 @@ $(function(){
     	  $('#createinput').remove();
     	  $('#'+edittrid).html(tdstr);
 
-        var myData = [{ id: 1, label: "Aluminum" }, { id: 2, label: "Steel" }, { id: 3, label: "Copper" }, { id: 4, label: "Plastic" }, { id: 5, label: "Glass" }, { id: 6, label: "Paper" }, { id: 7, label: "Electronics" }, { id: 8, label: "Household Hazardous Waste" }];
+    $('.checkbox').on('click', 'input[type="checkbox"]', function(){
+      if ($('input[type="checkbox"]').length <= 0) {
+        $('.hidden').prop('checked', true);
+      }
+      else {
+        $('.hidden').prop('checked', false);
+      }
+    });
 
-        $(".myDropdownCheckbox").dropdownCheckbox({
-          data: myData,
-          title: "Accepted Materials",
-          showNbSelected: true
-        });
   });
 
   $('#tableAjax').on('click','#ajaxupdate',function(){
-    var mmTypeValue = $('.myDropdownCheckbox').dropdownCheckbox("checked");
-    console.log(mmTypeValue);
 
-    mTypeValue = $('#mType').val();
+    var mType = [];
+    $.each($("input[type='checkbox']:checked"), function(){
+      mType.push($(this).val());
+    });
+
+    //var mType = $('#mType:checked').val();
     //console.log(mTypeValue);
 
     var reimburse = $('#reimburse').val();
@@ -115,7 +124,7 @@ $(function(){
     var address = $("input[name='"+field_name[1]+"']");
     var phone =$("input[name='"+field_name[2]+"']");
     var website = $("input[name='"+field_name[3]+"']");
-    var mType = $("input[name='"+field_name[4]+"']");
+    //var mType = $("input[name='"+field_name[4]+"']");
     var price = $("input[name='"+field_name[5]+"']");
     var comment = $("input[name='"+field_name[6]+"']");
 

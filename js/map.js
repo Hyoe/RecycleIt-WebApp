@@ -193,7 +193,7 @@ google.maps.event.addDomListener(window, "resize", function() {
 
               // Function to add db data to infowindow divs
               function addDbData(id, mb, type, comment){
-                if (p_id == id) {
+                if (p_id == id && comment != 'empty') {
                   //console.log(mb, 'already in favorites');
                   addReinburse.innerHTML = '<strong>Reimburse? :</strong> ' + mb;
                   addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;

@@ -52,8 +52,6 @@
 
 <body>
 
-<script src="/js/bootstrap-dropdown-checkbox.js" type="text/javascript" ></script>
-
 <?php include(__DIR__ . "/nav.php") ?>
 
 

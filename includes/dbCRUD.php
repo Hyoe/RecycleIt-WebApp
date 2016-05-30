@@ -72,25 +72,24 @@ function showData($data,$db){
 }
 
 function updateData($data,$db){
+  $placeid = $data['editid'];
+  $type = $data['mType'];
+  $reimburse = $data['reimburse'];
+  $comment = $data['comment'];
 
-$placeid = $data['editid'];
-$type = $data['mType'];
-$reimburse = $data['reimburse'];
-$comment = $data['comment'];
-
-$sql = "UPDATE favs_comments JOIN materials_prices
+  $sql = "UPDATE favs_comments JOIN materials_prices
           SET favs_comments.comment = :comment, materials_prices.material_type = :type, materials_prices.material_reimburse = :reimburse
           WHERE favs_comments.place_id = materials_prices.place_id
-          AND username = :username
+          AND favs_comments.place_id = :place_id
           AND materials_prices.place_id = :place_id";
-  $data=$db->prepare($sql);
-  $data->execute(array(":type" => $type, ":reimburse" => $reimburse, ":comment" => $comment, ":username" => $_SESSION['recycleitusername'], ":place_id" => $placeid));
-  $data->fetchAll();
-     showData($data,$db);
+
+    $data=$db->prepare($sql);
+    $data->execute(array(":type" => $type, ":reimburse" => $reimburse, ":comment" => $comment, ":username" => $_SESSION['recycleitusername'], ":place_id" => $placeid));
+    $data->fetchAll();
+       showData($data,$db);
 }
 
 function deleteData($data,$db){
-
   $placeid = $data['deleteid'];
 
     $sql = "DELETE FROM favs_comments
@@ -107,7 +106,7 @@ function deleteData($data,$db){
   $sql = "SELECT materials_prices.place_id, materials_prices.material_type, materials_prices.material_reimburse, favs_comments.comment
           FROM materials_prices
           JOIN favs_comments
-          ON materials_prices.place_id = favs_comments.place_id";
+          WHERE materials_prices.place_id = favs_comments.place_id";
   $data=$db->prepare($sql);
   $data->execute(array());
   $favs=$data->fetchAll();
