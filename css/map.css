@@ -20,6 +20,11 @@
 #savedResponse {
     font-size: 14px;
     color: #DAA520;
-    text-align: center;
+    text-align: left;
     font-weight: normal;
+}
+
+#star {
+    font-size: 18px;
+    color: #DAA520;
 }

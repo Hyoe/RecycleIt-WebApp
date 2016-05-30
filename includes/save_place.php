@@ -63,6 +63,10 @@ session_start();
             echo "savedok";
         }
 
+        if ($_SESSION['recycleitusername'] && $recordFavs > 0) {
+            echo "alreadyinfavs";
+        }
+
         //select * statment needed to account for duplicates
         $sql = "SELECT place_id FROM materials_prices
                 WHERE place_id = :place_id";

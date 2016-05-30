@@ -196,7 +196,7 @@
 
 
 
-<!--
+
 <input checked type="checkbox" class="hidden" data-type="recycling" />
 <label for="pid"></label>
 <input id="pid" name="pid" type="hidden" />
@@ -210,7 +210,7 @@
 <input id="pwebsite" type="hidden" name="pwebste" />
 <label for="email"></label>
 <input id="pemail" type="hidden" name="pemail" />
--->
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApN6i2gKLF_3nzPGWacafhqZAow0UPJK0&libraries=places&callback=initMap" async defer>
 </script>
