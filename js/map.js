@@ -197,13 +197,17 @@ google.maps.event.addDomListener(window, "resize", function() {
 
               // Function to add db data to infowindow divs
               function addDbData(id, mb, type, comment){
-                if (p_id == id && comment != 'empty') {
-                  //console.log(mb, 'already in favorites');
+                if (p_id == id && mb != "") {
                   addReinburse.innerHTML = '<strong>Reimburse? :</strong> ' + mb;
+                }
+                if (p_id == id && type != "") {
                   addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;
+                }
+                if (p_id == id && comment != 'empty') {
                   addComment.innerHTML = '<strong>Comment :</strong> ' + comment;
                 }
               }
+
 
               $.getJSON('/includes/dbCRUD.php',function(dataFavs){
                   if(dataFavs.success == true) {
@@ -221,10 +225,10 @@ google.maps.event.addDomListener(window, "resize", function() {
               function addDbDataFavs(id){
                 if (p_id == id) {
                   savedResponse.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
-                  //star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
                   //$("#savedResponse").css('display', 'none');
-                  }
+                  //star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
                 }
+              }
 
               infowindow.open(map, marker);
               home_marker.infowindow.close();
