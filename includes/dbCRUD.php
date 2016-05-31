@@ -69,6 +69,13 @@ function showData($data,$db){
     $tableResults .= '<td colspan="5">Add favorites to edit them here</td>';
   }
   echo $tableResults;
+
+  $response['success'] = false;
+  if (!empty($tableResults)) {
+    $response['success'] = true;
+    $response['dataTable'] = $tableResults;
+  }
+  echo ($response);
 }
 
 function updateData($data,$db){
@@ -100,9 +107,9 @@ function deleteData($data,$db){
         showData($data,$db);
 }
 
+/*
 // Json reimburse, material types, and comments back to map
   $response['success'] = false;
-
   $sql = "SELECT materials_prices.place_id, materials_prices.material_type, materials_prices.material_reimburse, favs_comments.comment
           FROM materials_prices
           JOIN favs_comments
@@ -116,5 +123,33 @@ function deleteData($data,$db){
     $response['data'] = $favs;
   }
   echo json_encode($response);
+*/
+
+
+// Json reimburse, material types, and comments back to map
+  $response['success'] = false;
+  $sql = "SELECT materials_prices.place_id, materials_prices.material_type, materials_prices.material_reimburse, favs_comments.comment
+          FROM materials_prices
+          JOIN favs_comments
+          WHERE materials_prices.place_id = favs_comments.place_id";
+  $data=$db->prepare($sql);
+  $data->execute(array());
+  $favs=$data->fetchAll();
+
+  $sql = "SELECT place_id
+          FROM favs_comments
+          WHERE username = :username";
+  $dataFavs=$db->prepare($sql);
+  $dataFavs->execute(array(":username" => $_SESSION['recycleitusername']));
+  $favsId=$dataFavs->fetchAll();
+
+  if (!empty($favs)) {
+    $response['success'] = true;
+    $response['data'] = $favs;
+    $response['dataFavs'] = $favsId;
+  }
+
+  echo json_encode($response);
+
 
 ?>

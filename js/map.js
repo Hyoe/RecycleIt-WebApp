@@ -205,11 +205,34 @@ google.maps.event.addDomListener(window, "resize", function() {
                   addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;
                   addComment.innerHTML = '<strong>Comment :</strong> ' + comment;
                 }
+                /*
                 if (p_id == id) {
                   $("#savedResponse").hide();
                   star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
                 }
+                */
               }
+
+              $.getJSON('/includes/dbCRUD.php',function(dataFavs){
+                  if(dataFavs.success == true) {
+                      if(dataFavs.dataFavs.length > 0){
+                          $.each(dataFavs.dataFavs,function(index, value){
+                              id = dataFavs.dataFavs[index].place_id;
+                              addDbDataFavs(id);
+                              //console.log(id, p_id);
+                          });
+                      }
+                  }
+              });
+
+              // Function to add db data to infowindow divs
+              function addDbDataFavs(id){
+                if (p_id == id) {
+                  $("#savedResponse").hide();
+                  star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
+                  }
+                }
+
 
               infowindow.open(map, marker);
               home_marker.infowindow.close();

@@ -195,6 +195,32 @@
 </script>
 
 
+<script>
+/*
+  $('#favsButton').click(function(){
+    $.get('/includes/dbCRUD.php',function(dataTable){
+      if(dataTable.dataTable.success == true) {
+        if(dataTable.dataTable.length > 0){
+          $('#favoritesDiv').html(dataTable[$response]);
+        }
+      }
+    });
+  });
+*/
+
+$('#favsButton').click(function(){
+    $.ajax({
+    url:"/includes/dbCRUD.php",
+    type:"POST",
+    data:"actionfunction=showData",
+    cache: false,
+    success: function(response){
+      $('#tableAjax').html(response);
+      //createInput();
+      }
+    });
+  })
+</script>
 
 
 <input checked type="checkbox" class="hidden" data-type="recycling" />

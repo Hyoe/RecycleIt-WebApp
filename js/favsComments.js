@@ -19,7 +19,7 @@ $(function(){
     cache: false,
     success: function(response){
 		  $('#tableAjax').html(response);
-		  createInput();
+		  //createInput();
 		}
 	});
 
@@ -42,7 +42,7 @@ $(function(){
           success: function(response){
 		        if(response!='error'){
 		          $('#tableAjax').html(response);
-		          createInput();
+		          //createInput();
 		        }
 		      }
         });
@@ -139,7 +139,7 @@ $(function(){
           if(response!='error'){
             $('#tableAjax').html(response);
             pre_tr_id=false;
-            createInput();
+            //createInput();
           }
         }
       });
@@ -156,7 +156,7 @@ $(function(){
       success: function(response){
         if(response!='error'){
           $('#tableAjax').html(response);
-          createInput();
+          //createInput();
         }
       }
     });
@@ -165,7 +165,7 @@ $(function(){
   $('#tableAjax').on('click','#ajaxcancel',function(){
     var edittrid = $(this).parent().parent().attr('id');
     $('#'+edittrid).html(pre_tds);
-		createInput();
+		//createInput();
 		pre_tr_id=false;
 	});
 
