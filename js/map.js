@@ -172,10 +172,11 @@ google.maps.event.addDomListener(window, "resize", function() {
             var request = { placeId: p_id };
 
             service.getDetails(request, function(details, status) {
-              infowindow.setContent('<div class="no-scroll" id="infoWindowDiv"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + '<div id="websiteDiv"><a href="' + details.website + '" target="_blank">' + details.website + '</a></div>' + '<div id="addReinburse"></div>' + '<div id="addType"></div>' + '<div id="addComment"></div>' + '<div id="star"></div>' + '<div id="savedResponse"><div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div></div>' + '</div>');
+              infowindow.setContent('<div class="no-scroll" id="infoWindowDiv"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + '<div id="websiteDiv"><a href="' + details.website + '" target="_blank">' + details.website + '</a></div>' + '<div id="addReinburse"></div>' + '<div id="addType"></div>' + '<div id="addComment"></div>' + '<div id="savedResponse"><div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div></div>' + '</div>');
 
               if (details.website == undefined) {
-                $('#websiteDiv').hide();
+                //$('#websiteDiv').hide();
+                $('#websiteDiv').css('display', 'none');
               }
 
               // Receive Json from dbCRUD.php
@@ -202,12 +203,6 @@ google.maps.event.addDomListener(window, "resize", function() {
                   addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;
                   addComment.innerHTML = '<strong>Comment :</strong> ' + comment;
                 }
-                /*
-                if (p_id == id) {
-                  $("#savedResponse").hide();
-                  star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
-                }
-                */
               }
 
               $.getJSON('/includes/dbCRUD.php',function(dataFavs){
@@ -225,11 +220,11 @@ google.maps.event.addDomListener(window, "resize", function() {
               // Function to add db data to infowindow divs
               function addDbDataFavs(id){
                 if (p_id == id) {
-                  $("#savedResponse").hide();
-                  star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
+                  savedResponse.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
+                  //star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
+                  //$("#savedResponse").css('display', 'none');
                   }
                 }
-
 
               infowindow.open(map, marker);
               home_marker.infowindow.close();

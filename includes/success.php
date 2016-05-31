@@ -9,4 +9,4 @@
         </div>
     </div>
 </div>
-<script>setTimeout(function(){window.location.href="/includes/search.php"},5000);</script>
+<script>setTimeout(function(){window.location.href="/includes/search.php"},4200);</script>
