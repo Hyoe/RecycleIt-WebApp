@@ -109,7 +109,6 @@ $(function(){
   });
 
   $('#tableAjax').on('click','#ajaxupdate',function(){
-
     var mType = [];
     $.each($("input[type='checkbox']:checked"), function(){
       mType.push($(this).val());
