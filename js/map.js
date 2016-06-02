@@ -77,12 +77,11 @@ google.maps.event.addDomListener(window, "resize", function() {
         map.setZoom(12);
       }
 
-      //var infowindow = new google.maps.InfoWindow();
+      var infowindow = new google.maps.InfoWindow();
 
       home_marker.setMap(map); //set the map to be used by the  marker
       home_marker.setPosition(place.geometry.location); //plot marker into the coordinates of the location
   });
-
 
   // Global variables (Ugly implementation)
   var markers_array = [];
@@ -172,12 +171,16 @@ google.maps.event.addDomListener(window, "resize", function() {
             var request = { placeId: p_id };
 
             service.getDetails(request, function(details, status) {
-              infowindow.setContent('<div class="no-scroll" id="infoWindowDiv"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<br>' + '<div id="websiteDiv"><a href="' + details.website + '" target="_blank">' + details.website + '</a></div>' + '<div id="addReinburse"></div>' + '<div id="addType"></div>' + '<div id="addComment"></div>' + '<div id="savedResponse"><div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div></div>' + '</div>');
+              infowindow.setContent('<div class="no-scroll" id="infoWindowDiv"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<div id="websiteDiv"></div>' + '<div id="hours"></div>' + '<div id="addReinburse"></div>' + '<div id="addType"></div>' + '<div id="addComment"></div>' + '<div id="savedResponse"><div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div></div>' + '</div>');
+              setTimeout(function(){ infowindow.open(map, marker) }, 110);
+              home_marker.infowindow.close();
 
+              /*
               if (details.website == undefined) {
                 //$('#websiteDiv').hide();
                 $('#websiteDiv').css('display', 'none');
               }
+              */
 
               // Receive Json from dbCRUD.php
               $.getJSON('/includes/dbCRUD.php',function(data){
@@ -230,8 +233,33 @@ google.maps.event.addDomListener(window, "resize", function() {
                 }
               }
 
-              infowindow.open(map, marker);
-              home_marker.infowindow.close();
+              var website = "";
+              try {
+                website = details.website;
+                if (website) {
+                  $('#websiteDiv').html('<a href="' + details.website + '" target="_blank">' + details.website + '</a>');
+                }
+                else if (website == undefined) {
+                  website = 'No Website';
+                }
+              }
+              catch(e) {
+                website = 'No Website';
+              }
+
+              var hours = "";
+              try {
+                hours = details.opening_hours.open_now;
+                if (hours == true) {
+                  $('#hours').html('<span style="color:green;">Open Now</span>');
+                }
+                else if (hours == false) {
+                  $('#hours').html('<span style="color:red;">Currently Closed</span>');
+                }
+              }
+              catch(e) {
+                hours = 'no hours';
+              }
 
             //console.log(details.formatted_phone_number);
               p_phone = details.formatted_phone_number;

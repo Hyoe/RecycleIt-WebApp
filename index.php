@@ -23,6 +23,7 @@
   <!-- Latest compiled and minified CSS -->
   <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/nav.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -38,6 +39,13 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/icon1.png">
+
+  <meta name="theme-color" content=#"99CC33" />
+
+
+  <script src="/js/jquery.flexslider-min.js" type="text/javascript" defer ></script>
+  <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
+
 
   <title>Recycle It!</title>
 
@@ -56,18 +64,45 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="/images/cans.jpg" />
+    </li>
+    <li>
+      <img src="/images/.png" />
+    </li>
+    <li>
+      <img src="/images/.png" />
+    </li>
+    <li>
+      <img src="#" />
+    </li>
+  </ul>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <h1>
-        About Page
+
       </h1>
     </div>
   </div>
 </div>
 
-<?php include(__DIR__ . "/includes/footer.php") ?>
 
+
+<script>
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "fade",
+      slideshowSpeed: "4000",
+    });
+  });
+</script>
+
+<?php include(__DIR__ . "/includes/footer.php") ?>
 
 
 <!-- End Document

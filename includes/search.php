@@ -194,20 +194,7 @@
   });
 </script>
 
-
 <script>
-/*
-  $('#favsButton').click(function(){
-    $.get('/includes/dbCRUD.php',function(dataTable){
-      if(dataTable.dataTable.success == true) {
-        if(dataTable.dataTable.length > 0){
-          $('#favoritesDiv').html(dataTable[$response]);
-        }
-      }
-    });
-  });
-*/
-
 $('#favsButton').click(function(){
     $.ajax({
     url:"/includes/dbCRUD.php",
@@ -237,10 +224,8 @@ $('#favsButton').click(function(){
 <label for="email"></label>
 <input id="pemail" type="hidden" name="pemail" />
 
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApN6i2gKLF_3nzPGWacafhqZAow0UPJK0&libraries=places&callback=initMap" async defer>
 </script>
-
 
 <?php include(__DIR__ . "/footer.php") ?>
 

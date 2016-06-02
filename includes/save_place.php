@@ -2,8 +2,8 @@
 session_start();
 ?>
 <?php
-  require("../dbconnection/appenginedbhl.php");
-  //require("../dbconnection/local_db_connection.php");
+  //require("../dbconnection/appenginedbhl.php");
+  require("../dbconnection/local_db_connection.php");
 
     if (!$_SESSION['recycleitusername']){
         //header("Location: ./includes/login.php");
