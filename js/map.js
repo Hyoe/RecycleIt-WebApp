@@ -172,8 +172,10 @@ google.maps.event.addDomListener(window, "resize", function() {
 
             service.getDetails(request, function(details, status) {
               infowindow.setContent('<div class="no-scroll" id="infoWindowDiv"><strong>' + details.name + '</strong><br>' + details.formatted_address + '<br>' + details.formatted_phone_number + '<div id="websiteDiv"></div>' + '<div id="hours"></div>' + '<div id="addReinburse"></div>' + '<div id="addType"></div>' + '<div id="addComment"></div>' + '<div id="savedResponse"><div class="btn-group" role="group" aria-label="..."><button id="btn_save" type="button" value="save place" class="btn btn-default"><span class="glyphicon glyphicon-save"></span> Save Favorite</button></div></div>' + '</div>');
-              setTimeout(function(){ infowindow.open(map, marker) }, 110);
+              infowindow.open(map, marker);
+              //setTimeout(function(){ infowindow.open(map, marker) }, 110);
               home_marker.infowindow.close();
+
 
               /*
               if (details.website == undefined) {
@@ -181,57 +183,6 @@ google.maps.event.addDomListener(window, "resize", function() {
                 $('#websiteDiv').css('display', 'none');
               }
               */
-
-              // Receive Json from dbCRUD.php
-              $.getJSON('/includes/dbCRUD.php',function(data){
-                  if(data.success == true) {
-                      if(data.data.length > 0){
-                          $.each(data.data,function(index, value){
-                              id = data.data[index].place_id;
-                              mb = data.data[index].material_reimburse;
-                              type = data.data[index].material_type;
-                              comment = data.data[index].comment;
-                              addDbData(id, mb, type, comment);
-                              //console.log(id, p_id);
-                          });
-                      }
-                  }
-              });
-
-              // Function to add db data to infowindow divs
-              function addDbData(id, mb, type, comment){
-                if (p_id == id && mb != "") {
-                  addReinburse.innerHTML = '<strong>Reimburse? :</strong> ' + mb;
-                }
-                if (p_id == id && type != "") {
-                  addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;
-                }
-                if (p_id == id && comment != "") {
-                  addComment.innerHTML = '<strong>Comment :</strong> ' + comment;
-                }
-              }
-
-
-              $.getJSON('/includes/dbCRUD.php',function(dataFavs){
-                  if(dataFavs.success == true) {
-                      if(dataFavs.dataFavs.length > 0){
-                          $.each(dataFavs.dataFavs,function(index, value){
-                              id = dataFavs.dataFavs[index].place_id;
-                              addDbDataFavs(id);
-                              //console.log(id, p_id);
-                          });
-                      }
-                  }
-              });
-
-              // Function to add db data to infowindow divs
-              function addDbDataFavs(id){
-                if (p_id == id) {
-                  savedResponse.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
-                  //$("#savedResponse").css('display', 'none');
-                  //star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
-                }
-              }
 
               var website = "";
               try {
@@ -261,6 +212,61 @@ google.maps.event.addDomListener(window, "resize", function() {
                 hours = 'no hours';
               }
 
+              // Receive Json from dbCRUD.php
+              $.getJSON('/includes/dbCRUD.php',function(data){
+                  if(data.success == true) {
+                      if(data.data.length > 0){
+                          $.each(data.data,function(index, value){
+                              id = data.data[index].place_id;
+                              mb = data.data[index].material_reimburse;
+                              type = data.data[index].material_type;
+                              comment = data.data[index].comment;
+                              addDbData(id, mb, type, comment);
+                              //console.log(id, p_id);
+                          });
+                      }
+                  }
+              });
+
+              // Function to add db data to infowindow divs
+              function addDbData(id, mb, type, comment){
+                if (p_id == id && mb != "") {
+                  $('#addReinburse').html('<strong>Reimburse? :</strong> ' + mb);
+                  //addReinburse.innerHTML = '<strong>Reimburse? :</strong> ' + mb;
+                }
+                if (p_id == id && type != "") {
+                  $('#addType').html('<strong>Materials Accepted :</strong> ' + type);
+                  //addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;
+                }
+                if (p_id == id && comment != "") {
+                  $('#addComment').html('<strong>Comment :</strong> ' + comment);
+                  //addComment.innerHTML = '<strong>Comment :</strong> ' + comment;
+                }
+              }
+
+              $.getJSON('/includes/dbCRUD.php',function(dataFavs){
+                  if(dataFavs.success == true) {
+                      if(dataFavs.dataFavs.length > 0){
+                          $.each(dataFavs.dataFavs,function(index, value){
+                              id = dataFavs.dataFavs[index].place_id;
+                              addDbDataFavs(id);
+                              //console.log(id, p_id);
+                          });
+                      }
+                  }
+              });
+
+              // Function to add db data to infowindow divs
+              function addDbDataFavs(id){
+                if (p_id == id) {
+                  $('#savedResponse').html('<span class="glyphicon glyphicon-star"></span>');
+                  //savedResponse.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
+                  //$("#savedResponse").css('display', 'none');
+                  //star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
+                }
+              }
+
+
             //console.log(details.formatted_phone_number);
               p_phone = details.formatted_phone_number;
               p_website = details.website;
@@ -282,16 +288,20 @@ google.maps.event.addDomListener(window, "resize", function() {
                       //console.log(place_id);
 
                         if (place_id == 'notloggedin') {
-                          savedResponse.innerHTML = ' *** Log in to save favorites! ***';
+                          $('#savedResponse').html(' *** Log in to save favorites! ***');
+                          //savedResponse.innerHTML = ' *** Log in to save favorites! ***';
                         }
                         else if (place_id == 'savedok') {
-                          savedResponse.innerHTML = ' *** Favorite saved. ***';
+                          $('#savedResponse').html(' *** Favorite saved. ***');
+                          //savedResponse.innerHTML = ' *** Favorite saved. ***';
                         }
                         else if (place_id == 'alreadyinfavs') {
-                          savedResponse.innerHTML = ' *** Already in favorites. ***';
+                          $('#savedResponse').html(' *** Already in favorites. ***');
+                          //savedResponse.innerHTML = ' *** Already in favorites. ***';
                         }
                         else {
-                          savedResponse.innerHTML = ' *** Database down, try later! ***';
+                          $('#savedResponse').html(' *** Database down, try later! ***');
+                          //savedResponse.innerHTML = ' *** Database down, try later! ***';
                         }
                     }
                   );
