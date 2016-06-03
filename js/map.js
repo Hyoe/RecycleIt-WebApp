@@ -206,7 +206,7 @@ google.maps.event.addDomListener(window, "resize", function() {
                 if (p_id == id && type != "") {
                   addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;
                 }
-                if (p_id == id && comment != 'empty') {
+                if (p_id == id && comment != "") {
                   addComment.innerHTML = '<strong>Comment :</strong> ' + comment;
                 }
               }

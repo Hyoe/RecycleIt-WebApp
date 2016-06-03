@@ -59,7 +59,7 @@ session_start();
             $stmt -> execute(array(
                                 ":username" => $_SESSION['recycleitusername'],
                                 ":place_id" => $p_id,
-                                ":comment" => "empty"));
+                                ":comment" => ""));
             echo "savedok";
         }
 

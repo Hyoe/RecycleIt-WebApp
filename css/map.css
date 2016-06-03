@@ -28,3 +28,7 @@
     font-size: 18px;
     color: #DAA520;
 }
+
+#addType, #addComment {
+    max-width: 322px;
+}

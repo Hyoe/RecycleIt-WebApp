@@ -56,7 +56,7 @@ function showData($data,$db){
       '<td>'.$fav['place_name'].'</td>'.
       '<td>'.$fav['place_address'].'</td>'.
       '<td>'.$fav['place_phone'].'</td>'.
-      '<td><a href="'.$fav['place_website'].'" target="_blank">'.$fav['place_website'].'</a></td>'.
+      '<td><a href="'.$fav['place_website'].'" target="_blank">Website</a></td>'.
       '<td>'.$fav['material_type'].'</td>'.
       '<td>'.$fav['material_reimburse'].'</td>'.
       '<td>'.$fav['comment'].'</td>'.

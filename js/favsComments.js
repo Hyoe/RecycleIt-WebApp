@@ -52,12 +52,24 @@ $(function(){
 	  }
   });
 
+var close = document.getElementById("close");
+var favsButton = document.getElementById("favsButton");
   $('#tableAjax').on('click','#ajaxedit',function(){
     var edittrid = $(this).parent().parent().attr('id');
       if(pre_tr_id){
         alert("Cancel or update in-progress update first");
-	       return false;
+	      return false;
       }
+
+      /*
+
+      if($('#close, #favsButton').on('click', function(){
+        alert("Cancel or update in-progress update first");
+        return false;
+        })
+      )
+      */
+
       pre_tr_id = true;
     	var tds = $('#'+edittrid).children('td');
       var tdstr = '';

@@ -2,32 +2,8 @@
     display: none;
 }
 
-#mType {
-    width: 180px;
-}
-
-#reimburse {
-    width: 80px;
-}
-
 #comment {
     width: 332px;
-}
-
-#phone {
-    width: 86px;
-}
-
-#website {
-    width: 216px;
-}
-
-#address {
-    width: 180px;
-}
-
-table {
-    height: 400px;
 }
 
 #favoritesDiv {

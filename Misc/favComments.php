@@ -27,8 +27,6 @@ session_start();
   <link href="/css/nav.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 
-   <link href="/css/bootstrap-dropdown-checkbox.css" media="screen" rel="stylesheet" type="text/css">
-
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -45,7 +43,6 @@ session_start();
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/icon1.png">
-
 
 </head>
 
