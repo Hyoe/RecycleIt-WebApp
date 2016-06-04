@@ -4,7 +4,6 @@ session_start();
 <?php
   if ($_SESSION['recycleitusername']) {
 ?>
-    <div class="large-nav">
       <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -30,12 +29,10 @@ session_start();
         </div>
         <!--/.container-fluid -->
       </nav>
-    </div>
 <?php
   }
   else {
 ?>
-    <div class="large-nav">
       <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -62,5 +59,4 @@ session_start();
         </div>
         <!--/.container-fluid -->
       </nav>
-    </div>
 <?php } ?>

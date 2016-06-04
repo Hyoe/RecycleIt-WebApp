@@ -227,7 +227,7 @@ $('#favsButton').click(function(){
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApN6i2gKLF_3nzPGWacafhqZAow0UPJK0&libraries=places&callback=initMap" async defer>
 </script>
 
-<?php include(__DIR__ . "/footer.php") ?>
+<?//php include(__DIR__ . "/footer.php") ?>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

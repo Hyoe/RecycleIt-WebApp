@@ -96,6 +96,7 @@ google.maps.event.addDomListener(window, "resize", function() {
   var request;
   var myButtonElement;
 
+
   function removeMarkers(){
     for(var i = 0; i < markers_array.length; i++){
       markers_array[i].setMap(null);
@@ -266,7 +267,6 @@ google.maps.event.addDomListener(window, "resize", function() {
                 }
               }
 
-
             //console.log(details.formatted_phone_number);
               p_phone = details.formatted_phone_number;
               p_website = details.website;
@@ -312,12 +312,16 @@ google.maps.event.addDomListener(window, "resize", function() {
 
             });
 
-            }
+          }
             })(marker, x));
           } // End of for loop
 
         }
+
       }
+
     );
+
   });
+
 }

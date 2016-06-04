@@ -54,6 +54,7 @@ if ($username && $password) {
   <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/nav.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/register.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -92,7 +93,9 @@ if ($username && $password) {
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bg">
 
+</div>
 
 <div class="signin-form">
 <div id="rsform" class="container">

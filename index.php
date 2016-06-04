@@ -16,7 +16,9 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,greek' rel='stylesheet' type='text/css'>
   <!--<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">-->
+  <!-- Font Awesome icon -->
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -35,26 +37,24 @@
   <!-- Optional theme -->
   <link href="/bootstrap/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
 
-
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/icon1.png">
 
   <meta name="theme-color" content=#"99CC33" />
 
-
   <script src="/js/jquery.flexslider-min.js" type="text/javascript" defer ></script>
   <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
 
+  <script src="https://use.fontawesome.com/42200448b5.js"></script>
 
   <title>Recycle It!</title>
 
 </head>
 
-<body>
-
 <?php include(__DIR__ . "/includes/nav.php") ?>
 
+<body class="demo">
 
   <!-- Header
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -66,17 +66,11 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="flexslider">
   <ul class="slides">
-    <li>
-      <img src="/images/cans.jpg" />
+    <li style="background-image: url(/images/cansImage.jpg);">
     </li>
-    <li>
-      <img src="/images/.png" />
+    <li style="background-image: url(/images/plasticImage.jpg);">
     </li>
-    <li>
-      <img src="/images/.png" />
-    </li>
-    <li>
-      <img src="#" />
+    <li style="background-image: url(/images/glassImage.jpg);">
     </li>
   </ul>
 </div>
@@ -97,10 +91,14 @@
   $(window).load(function() {
     $('.flexslider').flexslider({
       animation: "fade",
-      slideshowSpeed: "4000",
+      controlNav: false,
+      slideshowSpeed: "5000",
+      directionNav: false,
     });
   });
 </script>
+
+
 
 <?php include(__DIR__ . "/includes/footer.php") ?>
 
