@@ -95,6 +95,9 @@
                         </button>
                       </div>
 
+
+<!--Remove materials filtering
+
                     <div class="btn-group" role="group" aria-label="...">
                       <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
                       </button>
@@ -108,6 +111,8 @@
                           <li><a tabindex="-1" href="#">Hazardous</a></li>
                         </ul>
                     </div>
+
+-->
                     </div>
                   </div>
 
@@ -146,6 +151,7 @@
                             </button>
                           </div>
 
+<!--Remove materials filtering
                         <div class="btn-group" role="group" aria-label="...">
                           <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All Materials <span class="caret"></span>
                           </button>
@@ -159,8 +165,11 @@
                               <li><a tabindex="-1" href="#">Hazardous</a></li>
                             </ul>
                         </div>
+-->
+
                         </div>
                       </div>
+
 
                 </div>
               </div>
