@@ -142,6 +142,8 @@ google.maps.event.addDomListener(window, "resize", function() {
             var lat = results[x]['geometry']['location']['lat'];
             var lng = results[x]['geometry']['location']['lng'];
 
+            var allPlaceId = results[x]['place_id'];
+
             //create a new infowindow
             infowindow = new google.maps.InfoWindow();
 
@@ -151,7 +153,6 @@ google.maps.event.addDomListener(window, "resize", function() {
               map: map,
               //icon: results[x]['icon']
             });
-
             markers_array.push(marker);
 
             //assign an infowindow to the marker so that when its clicked it shows the name of the place
@@ -245,6 +246,7 @@ google.maps.event.addDomListener(window, "resize", function() {
                 }
               }
 
+
               $.getJSON('/includes/dbCRUD.php',function(dataFavs){
                   if(dataFavs.success == true) {
                       if(dataFavs.dataFavs.length > 0){
@@ -266,6 +268,7 @@ google.maps.event.addDomListener(window, "resize", function() {
                   //star.innerHTML = '<span class="glyphicon glyphicon-star"></span>';
                 }
               }
+
 
             //console.log(details.formatted_phone_number);
               p_phone = details.formatted_phone_number;
