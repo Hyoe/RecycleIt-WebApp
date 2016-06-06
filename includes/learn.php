@@ -56,7 +56,7 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<div class="container">
+<div class="container learn">
   <div class="row">
     <div class="col-md-12">
       <div id="title">

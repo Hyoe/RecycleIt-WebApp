@@ -2,8 +2,8 @@
 session_start();
 
 if ($_POST) {
-  //require("../dbconnection/appenginedbhl.php");
-  require("../dbconnection/local_db_connection.php");
+  require("../dbconnection/appenginedbhl.php");
+  //require("../dbconnection/local_db_connection.php");
   $username = $_POST['username'];
   $password = $_POST['passwordLogin'];
 
@@ -72,6 +72,8 @@ if ($username && $password) {
   <!-- Optional theme -->
   <link href="/bootstrap/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
 
+  <script src="https://use.fontawesome.com/42200448b5.js"></script>
+
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -93,8 +95,8 @@ if ($username && $password) {
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="bg">
-
+<div id="loginPicDiv">
+  <img src="/images/plasticImageCut.jpg" alt="glass">
 </div>
 
 <div class="signin-form">

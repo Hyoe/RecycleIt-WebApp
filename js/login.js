@@ -61,7 +61,7 @@ $(document).ready(function()
 
         else if(data.indexOf("registered") > -1)
         {
-          $("#login-submit").html('<img src="../images/default.gif" /> &nbsp; SIGNING IN ...');
+          $("#login-submit").html('<i class="fa fa-spinner fa-pulse fa-fw"></i> &nbsp; SIGNING IN ...');
           setTimeout(function(){ window.location.replace('/includes/search.php'); }, 1200);
           /*
           $("#login-submit").html('<img src="../images/default.gif" /> &nbsp; SIGNING IN ...');

@@ -13,7 +13,7 @@ session_start();
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.php"><img src="/images/logoFinalSmall.png" alt="RECYCLE it!">
+            <a class="navbar-brand" href="/index.php"><img src="/images/logo3Small.png" alt="RECYCLE it!">
             </a>
           </div>
           <div id="navbar3" class="navbar-collapse collapse">
@@ -42,7 +42,7 @@ session_start();
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.php"><img src="/images/logoFinalSmall.png" alt="RECYCLE it!">
+            <a class="navbar-brand" href="/index.php"><img src="/images/logo3Small.png" alt="RECYCLE it!">
             </a>
           </div>
           <div id="navbar3" class="navbar-collapse collapse">
@@ -51,7 +51,7 @@ session_start();
               <li><a href="/includes/search.php"><span class="glyphicon glyphicon-map-marker"></span> SEARCH</a></li>
               <li><a href="/includes/learn.php"><span class="glyphicon glyphicon-leaf"></span> RECYCLING GUIDE</a></li>
               <li><a href="/includes/contact.php"><span class="glyphicon glyphicon-envelope"></span> CONTACT</a></li>
-              <li><a href="/includes/register.php"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+              <li><a href="/includes/register.php"><span class="glyphicon glyphicon-user"></span> REGISTER</a></li>
               <li><a href="/includes/login.php"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
             </ul>
           </div>

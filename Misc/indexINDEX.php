@@ -25,7 +25,6 @@
   <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/nav.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="/css/kburns.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -55,7 +54,7 @@
 
 <?php include(__DIR__ . "/includes/nav.php") ?>
 
-<body>
+<body class="demo">
 
   <!-- Header
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -65,12 +64,10 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<div class="imageNav imageTint">
-<div class="divBlur">
+<div id="imageNav">
   <div class="container">
-    <div class="row welcomeBG">
-      <div class="col-md-10 col-md-offset-1">
+    <div class="row">
+      <div class="col-md-12">
         <div id="welcomeText">
 
           <div id="welcomeHeadlineText">
@@ -93,16 +90,79 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+
+<!--
+<nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top" id="imageNav">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="textOverImages">
+        <div class="row">
+          <div class="col-md-12">
+
+          <div id=welcomeTextDiv>
+            <div id="welcomeHeadlineText">
+              <p>Welcome to RecycleIt!</p>
+            </div>
+
+              <div id="welcomeBulletText">
+                <p><i class="fa fa-recycle" aria-hidden="true"></i>
+                Locate nearby recycling centers on our search page.</p>
+                <p><i class="fa fa-recycle" aria-hidden="true"></i>
+                Register / login to save your favorite facilities.</p>
+                <p><i class="fa fa-recycle" aria-hidden="true"></i>
+                Update your favorites with the most current information for others to see.</p>
+                <p><i class="fa fa-recycle" aria-hidden="true"></i>
+                Check out our recycling guide to learn about common household recyclables.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+-->
+
+
+<div class="flexslider">
+  <ul class="slides">
+    <li style="background-image: url(/images/glassImageTint.jpg);">
+    </li>
+    <li style="background-image: url(/images/plasticImageTint.jpg);">
+    </li>
+    <li style="background-image: url(/images/cansImageTint.jpg);">
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+
+      </h1>
     </div>
   </div>
 </div>
 
 
-<div class="slideshow">
-  <div class="slideshow-image" style="background-image: url('/images/glassImage.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('/images/cansImage.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('/images/plasticImage.jpg')"></div>
-</div>
+
+<script>
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "fade",
+      controlNav: false,
+      slideshowSpeed: "5000",
+      directionNav: false,
+    });
+  });
+</script>
+
 
 
 <?php include(__DIR__ . "/includes/footer.php") ?>

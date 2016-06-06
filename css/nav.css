@@ -18,7 +18,8 @@ body {
 }
 
 .navbar .navbar-collapse {
-    text-align: center;
+  text-align: center;
+  z-index: 1000;
 }
 
 .panel-default> .panel-footer {
@@ -29,8 +30,14 @@ body {
 .navbar-static-bottom {
     color: white;
     text-align: center;
+    padding-top: 10px
 }
 
 #custom-search-input {
     z-index: 1;
 }
+
+.navbar .navbar-inverse a:hover {
+  color: 33cc33 !important;
+}
+

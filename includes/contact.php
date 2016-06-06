@@ -91,8 +91,9 @@
   }
 ?>
 
-
-
+<div id="contactPicDiv">
+  <img src="/images/glassImageCut.jpg" alt="glass">
+</div>
 
 <div id="rsform" class="container">
         <div class="row">
@@ -140,6 +141,9 @@
             </div>
         </div>
     </div>
+
+
+
 
   <!-- Footer
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

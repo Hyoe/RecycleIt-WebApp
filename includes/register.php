@@ -12,8 +12,8 @@ $stmt->execute(array(":username"=>"hyo", ":pw"=>"hyo", ":email"=>"hyo@hyo.com"))
 
 if ($_POST) {
 
-  //require("../dbconnection/appenginedbhl.php");
-  require("../dbconnection/local_db_connection.php");
+  require("../dbconnection/appenginedbhl.php");
+  //require("../dbconnection/local_db_connection.php");
   $username = $_POST['username'];
   $email = $_POST['email'];
   $password = $_POST['password'];
@@ -103,6 +103,8 @@ if ($_POST) {
   <!-- Optional theme -->
   <link href="/bootstrap/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
 
+  <script src="https://use.fontawesome.com/42200448b5.js"></script>
+
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/icon1.png">
@@ -123,7 +125,9 @@ if ($_POST) {
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
+<div id="registerPicDiv">
+  <img src="/images/cansImageCut.jpg" alt="glass">
+</div>
 
 <div class="signin-form">
   <div id="rsform" class="container">

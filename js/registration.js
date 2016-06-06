@@ -97,7 +97,7 @@ $(document).ready(function()
 
         else if(data.indexOf("registered") > -1)
         {
-          $("#register-submit").html('<img src="../images/default.gif" /> &nbsp; Signing Up ...');
+          $("#register-submit").html('<i class="fa fa-spinner fa-pulse fa-fw"></i> &nbsp; Signing Up ...');
           setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("success.php"); }); ',2000);
         }
         else {
