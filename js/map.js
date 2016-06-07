@@ -168,6 +168,8 @@ google.maps.event.addDomListener(window, "resize", function() {
                 lat = marker.getPosition().lat();
                 lng = marker.getPosition().lng();
 
+                map.panTo(marker.getPosition());
+
 
             //var service = new google.maps.places.PlacesService(map);
             var request = { placeId: p_id };
@@ -177,7 +179,7 @@ google.maps.event.addDomListener(window, "resize", function() {
               infowindow.open(map, marker);
               //setTimeout(function(){ infowindow.open(map, marker) }, 110);
               home_marker.infowindow.close();
-              map.setCenter(marker.getPosition());
+
 
               /*
               if (details.website == undefined) {
