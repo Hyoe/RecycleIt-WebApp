@@ -168,7 +168,9 @@ google.maps.event.addDomListener(window, "resize", function() {
                 lat = marker.getPosition().lat();
                 lng = marker.getPosition().lng();
 
+
                 map.panTo(marker.getPosition());
+                map.panBy(0, lng-6);
 
 
             //var service = new google.maps.places.PlacesService(map);

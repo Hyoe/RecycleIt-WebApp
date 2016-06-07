@@ -40,11 +40,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/icon1.png">
 
-
-  <script src="/js/jquery.flexslider-min.js" type="text/javascript" defer ></script>
-  <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
-
-
 </head>
 
 <?php include(__DIR__ . "/includes/nav.php") ?>
