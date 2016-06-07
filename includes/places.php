@@ -6,7 +6,7 @@ $google_places = new joshtronic\GooglePlaces('AIzaSyALVhOgeFiEdQePVTvVDNDl5PulEz
 
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
-$place_types = $_POST['place_types'];
+//$place_types = $_POST['place_types'];
 
 $google_keyword = $_POST['place_types'];
 
@@ -15,14 +15,10 @@ $google_places->radius = 8500; //hard-coded radius
 //$google_places->types = $place_types;
 //$google_places->keyword = "recycling|waste_management";
 $google_places->keyword = "recycling";
-//$google_places->keyword = "waste";
-//$google_places->reference = 'ChIJv8eIzs4r3YARlyg_wEI49l8';
-//$details = $google_places->details();
-
 
 //$nearby_places = $google_places->nearbySearch();
-$google_places->reference = '#reference#'; // Reference from search results
-$details                  = $google_places->details();
+//$google_places->reference = '#reference#'; // Reference from search results
+//$details                  = $google_places->details();
 
 $nearby_places = $google_places->nearbySearch();
 

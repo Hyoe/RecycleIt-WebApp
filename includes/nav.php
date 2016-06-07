@@ -20,6 +20,7 @@ session_start();
             <ul class="nav navbar-nav navbar-right" id="menuClick">
               <li><a href="/index.php"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
               <li><a href="/includes/search.php"><span class="glyphicon glyphicon-map-marker"></span> SEARCH</a></li>
+              <li><a href="/includes/whyRecycle.php"><span class="glyphicon glyphicon-question-sign"></span> WHY RECYCLE?</a>
               <li><a href="/includes/learn.php"><span class="glyphicon glyphicon-leaf"></span> RECYCLING GUIDE</a></li>
               <li><a href="/includes/contact.php"><span class="glyphicon glyphicon-envelope"></span> CONTACT</a></li>
               <li><a href="/includes/logout.php"><span class="glyphicon glyphicon-log-out"></span> LOG OUT</a></li>
@@ -49,6 +50,7 @@ session_start();
             <ul class="nav navbar-nav navbar-right" id="menuClick">
               <li><a href="/index.php"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
               <li><a href="/includes/search.php"><span class="glyphicon glyphicon-map-marker"></span> SEARCH</a></li>
+              <li><a href="/includes/whyRecycle.php"><span class="glyphicon glyphicon-question-sign"></span> WHY RECYCLE?</a>
               <li><a href="/includes/learn.php"><span class="glyphicon glyphicon-leaf"></span> RECYCLING GUIDE</a></li>
               <li><a href="/includes/contact.php"><span class="glyphicon glyphicon-envelope"></span> CONTACT</a></li>
               <li><a href="/includes/register.php"><span class="glyphicon glyphicon-user"></span> REGISTER</a></li>

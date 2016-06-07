@@ -190,7 +190,7 @@ google.maps.event.addDomListener(window, "resize", function() {
               try {
                 website = details.website;
                 if (website) {
-                  $('#websiteDiv').html('<a href="' + details.website + '" target="_blank">' + details.website + '</a>');
+                  $('#websiteDiv').html('<a href="' + details.website + '" target="_blank">Website</a>');
                 }
                 else if (website == undefined) {
                   website = 'No Website';

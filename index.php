@@ -6,9 +6,8 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Recycle It!</title>
-  <meta name="Recycling" content="">
-  <meta name="Recycle It!" content="">
+  <title>RecycleIt!</title>
+  <meta name="theme-color" content="#99CC33">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -17,7 +16,7 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,greek' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+  <script src="https://use.fontawesome.com/42200448b5.js"></script>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -41,15 +40,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/icon1.png">
 
-  <meta name="theme-color" content=#"99CC33" />
 
   <script src="/js/jquery.flexslider-min.js" type="text/javascript" defer ></script>
   <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
 
-  <script src="https://use.fontawesome.com/42200448b5.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
-
-  <title>Recycle It!</title>
 
 </head>
 
@@ -88,6 +82,18 @@
               Update your favorites with the most current information for others to see.</p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
               Check out our recycling guide to learn more about common household recyclables.</p>
+            </div>
+            <br />
+            <div id="tips">
+              Tips:
+            </div>
+
+            <div id="tipsList">
+              <ul>
+                <li>Go to the Search page to locate places and see your favorites.</li>
+                <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
+                <li>Press the “Find Places” button to show recycling centers in your selected area.</li>
+              </ul>
             </div>
 
         </div>

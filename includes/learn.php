@@ -6,9 +6,8 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Recycle It!</title>
-  <meta name="Recycling" content="">
-  <meta name="Recycle It!" content="">
+  <title>RecycleIt!</title>
+  <meta name="theme-color" content="#99CC33">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -16,7 +15,7 @@
 
   <!-- FONTS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,greek' rel='stylesheet' type='text/css'>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -59,13 +58,13 @@
 <div class="container learn">
   <div class="row">
     <div class="col-md-12">
-      <div id="title">
+      <div class="title">
         <h2>Common Household Recyclables</h2>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 paragraph">
       <img src="/images/ewaste.png" alt="e-waste" class="center-block img-responsive">
       E-waste is the popular, informal name for electronic products. Unwanted electronic devices should be reused or recycled. Electronic equipment should NOT be disposed of with regular garbage; in fact, this is illegal in most states. Functioning electronics can be sold or donated thereby prolonging their useful life. Nonfunctioning electronics that cannot be repaired should be recycled by an organization qualified to do so.
       <ul>
@@ -75,7 +74,7 @@
         <li>Mobile Phones</li>
       </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 paragraph">
       <img src="/images/glass.png" alt="glass" class="center-block img-responsive">
       Occasionally a center will accept only certain "colors" of glass. Light bulbs, Pyrex, ceramics, and mirrors are NEVER accepted. In some places, glass is becoming less accepted because of the potential of worker injuries due to broken glass.
       <ul>
@@ -85,7 +84,7 @@
         <li>Jelly jars</li>
       </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 paragraph">
       <img src="/images/hhw.png" alt="hhw" class="center-block img-responsive">
       Many local government agencies run programs that help households and small businesses recycle or properly dispose of their hazardous wastes. Additionally, some retailers will collect certain universal wastes, such as batteries.
       <ul>
@@ -102,7 +101,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 paragraph">
       <img src="/images/metal.png" alt="Metal" class="center-block img-responsive">
       <h4>Aluminum Cans</h4>
       <ul>
@@ -116,7 +115,7 @@
       </ul>
       * Include the can lids, and you don't even need to remove the labels.
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 paragraph">
       <img src="/images/plastic.png" alt="plastic" class="center-block img-responsive">
       Most centers will accept those plastics labeled with the PETE 1 and HDPE 2 symbols and many more are accepting plastics labeled 1 - 7. These can generally be found molded into the bottom of the containers. If you can't identify the type of plastic, don't include it. Most facilities also require that you remove the cap since it is usually made of a different type of plastic.
       <ul>
@@ -128,7 +127,7 @@
         <li>Water bottles</li>
       </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 paragraph">
       <img src="/images/paper.png" alt="paper" class="center-block img-responsive">
       <h4>Paper and Paperboard</h4>
       <ul>

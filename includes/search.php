@@ -7,9 +7,8 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Recycle It!</title>
-  <meta name="Recycling" content="">
-  <meta name="Recycle It!" content="">
+  <title>RecycleIt!</title>
+  <meta name="theme-color" content="#99CC33">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -234,7 +233,7 @@ $('#favsButton').click(function(){
 <label for="email"></label>
 <input id="pemail" type="hidden" name="pemail" />
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApN6i2gKLF_3nzPGWacafhqZAow0UPJK0&libraries=places&callback=initMap" async defer>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALVhOgeFiEdQePVTvVDNDl5PulEz_gJOM&libraries=places&callback=initMap" async defer>
 </script>
 
 <?//php include(__DIR__ . "/footer.php") ?>

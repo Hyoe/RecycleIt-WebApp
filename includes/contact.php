@@ -6,9 +6,8 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Recycle It!</title>
-  <meta name="Recycling" content="">
-  <meta name="Recycle It!" content="">
+  <title>RecycleIt!</title>
+  <meta name="theme-color" content="#99CC33">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
