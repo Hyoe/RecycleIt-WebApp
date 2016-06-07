@@ -8,7 +8,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>RecycleIt!</title>
-  <meta name="theme-color" content="#99CC33">
+  <meta name="theme-color" content="#009900">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

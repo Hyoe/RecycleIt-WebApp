@@ -127,7 +127,7 @@ h1 small:last-child {
 
 @media screen and (max-width: 500px) {
   .imageNav {
-    background: #993366;
+    background: #009900;
     color: #ffffff;
   }
   .imageTint {
