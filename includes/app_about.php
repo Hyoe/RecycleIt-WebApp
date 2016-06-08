@@ -62,7 +62,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class=title>
-        <h2><strong id="docs-internal-guid-95c95956-2dd7-9cdf-0172-e3212ac4030a">RecycleIt! is here to help you with your recycling needs.</strong></h2>
+        <h2><strong>RecycleIt! is here to help you with your recycling needs.</strong></h2>
       </div>
      <div class="container about">
         <div class="row aboutrow">
@@ -75,10 +75,9 @@
                    <li>Update your favorites with the most current information for others to see.</li>
                    <li>Check out our recycling guide to learn more about common household recyclables.</li>
                  </ul>
-               Tips:
-               <br />
-                 <ul>
-                   <li>Go to the Search page to locate places and see your favorites.</li>
+               <h3><strong>Tips:</strong></h3>
+               <ul>
+                  <li>Go to the Search page to locate places and see your favorites.</li>
                    <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
                    <li>Press the “Find Places” button to show recycling centers in your selected area.</li>
                  </ul>
