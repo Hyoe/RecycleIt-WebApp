@@ -52,29 +52,40 @@ $(function(){
 	  }
   });
 
-var close = document.getElementById("close");
-var favsButton = document.getElementById("favsButton");
+
+
   $('#tableAjax').on('click','#ajaxedit',function(){
     var edittrid = $(this).parent().parent().attr('id');
+
+
+//in process change
+    $('#close').unbind('click');
+    $('#favsButton').unbind('click');
+
+
       if(pre_tr_id){
         alert("Cancel or update in-progress update first");
 	      return false;
       }
 
-      /*
 
-      if($('#close, #favsButton').on('click', function(){
+
+/*
+  $('#tableAjax').on('click','#ajaxedit',function(){
+    var edittrid = $(this).parent().parent().attr('id');
+      if(pre_tr_id){
         alert("Cancel or update in-progress update first");
         return false;
-        })
-      )
-      */
+      }
+*/
+
 
       pre_tr_id = true;
     	var tds = $('#'+edittrid).children('td');
       var tdstr = '';
 		  var td = '';
 		  pre_tds = tds;
+
 
         for(var j=0;j<field_arr.length-3;j++){
           tdstr += '<td><div id="'+field_name[j]+'">'+$(tds[j]).html()+'</div></td>';
@@ -120,7 +131,22 @@ var favsButton = document.getElementById("favsButton");
 
   });
 
+
+
+
+
+
+
   $('#tableAjax').on('click','#ajaxupdate',function(){
+
+//in process change
+    $('#favsButton, #close').click(function() {
+      $('#favoritesDiv').toggle();
+    });
+    $('#close').bind('click');
+    $('#favsButton').bind('click');
+
+
     var mType = [];
     $.each($("input[type='checkbox']:checked"), function(){
       mType.push($(this).val());
@@ -178,6 +204,18 @@ var favsButton = document.getElementById("favsButton");
     $('#'+edittrid).html(pre_tds);
 		//createInput();
 		pre_tr_id=false;
+
+
+//in process change
+      $('#favsButton, #close').click(function() {
+        $('#favoritesDiv').toggle();
+      });
+      $('#close').bind('click');
+      $('#favsButton').bind('click');
+
+
+
+
 	});
 
 });

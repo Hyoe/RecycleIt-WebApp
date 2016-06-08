@@ -206,16 +206,16 @@
 <script>
 $('#favsButton').click(function(){
     $.ajax({
-    url:"/includes/dbCRUD.php",
-    type:"POST",
-    data:"actionfunction=showData",
-    cache: false,
-    success: function(response){
-      $('#tableAjax').html(response);
-      //createInput();
-      }
+      url:"/includes/dbCRUD.php",
+      type:"GET",
+      data:"actionfunction=showData",
+      cache: false,
+      success: function(response){
+        $('#tableAjax').html(response);
+        //createInput();
+        }
     });
-  })
+});
 </script>
 
 
