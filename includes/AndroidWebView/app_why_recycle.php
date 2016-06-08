@@ -21,8 +21,8 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="/css/androidNav.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/css/AndroidCSS/androidNav.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/css/AndroidCSS/styleAndroid.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -49,9 +49,14 @@
 
   <!-- Header
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div id="blackDiv">
-</div>
-<div id="logoDiv"><img src="/images/logoSmall.png" alt="">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="blackDiv"></div>
+        <div id="logoDiv"><img src="/images/logoSmall.png" alt="">
+      </div>
+    </div>
+  </div>
 </div>
 
   <!-- Primary Page Layout

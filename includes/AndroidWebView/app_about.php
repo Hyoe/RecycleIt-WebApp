@@ -20,8 +20,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
-
-  <link href="/css/androidNav.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/css/AndroidCSS/androidNav.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -53,44 +52,54 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div id="blackDiv">
-</div>
-<div id="logoDiv"><img src="/images/logoSmall.png" alt="">
-</div>
-
-<div class="container why">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class=title>
-        <h2><strong>RecycleIt! is here to help you with your recycling needs.</strong></h2>
-      </div>
-     <div class="container about">
-        <div class="row aboutrow">
-          <div class="col-md-10 col-md-offset-1">
-            <div id="welcomeText">
-               <div id="aboutText">
-                 <ul>
-                   <li>Register / login to save your favorite facilities.</li>
-                   <li>Locate nearby recycling centers on our search page.</li>
-                   <li>Update your favorites with the most current information for others to see.</li>
-                   <li>Check out our recycling guide to learn more about common household recyclables.</li>
-                 </ul>
-               <h3><strong>Tips:</strong></h3>
-               <ul>
-                  <li>Go to the Search page to locate places and see your favorites.</li>
-                   <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
-                   <li>Press the “Find Places” button to show recycling centers in your selected area.</li>
-                 </ul>
-               </div>
-            </div>
-          </div>
-        </div>
+      <div id="blackDiv"></div>
+        <div id="logoDiv"><img src="/images/logoSmall.png" alt="">
       </div>
     </div>
   </div>
 </div>
 
+<div class="container">
+    <div class="row welcomeBG">
+      <div class="col-md-12">
+        <div id="welcomeText">
 
+          <div id="welcomeHeadlineText">
+            <p>RecycleIt! is here to help you with your recycling needs.</p>
+          </div>
+
+            <div id="welcomeBulletText">
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Register / login to save your favorite facilities.
+              </p>
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Locate nearby recycling centers on our search page.
+              </p>
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Update your favorites with the most current information for others to see.</p>
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Check out our recycling guide to learn more about common household recyclables.</p>
+            </div>
+            <br />
+            <div id="tips">
+              Tips:
+            </div>
+
+            <div id="tipsList">
+              <ul>
+                <li>Go to the Search page to locate places and see your favorites.</li>
+                <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
+                <li>Press the “Find Places” button to show recycling centers in your selected area.</li>
+              </ul>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</div>
 
 
   <!-- Footer

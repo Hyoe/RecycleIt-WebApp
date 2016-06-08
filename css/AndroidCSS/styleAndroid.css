@@ -1,0 +1,57 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+}
+
+.learn h2 {
+    text-align: center;
+    padding: 0 0 30px 0;
+    font-weight: 600;
+}
+
+.paragraph {
+    font-size: 1.2em;
+}
+
+.paragraph h4 {
+    font-weight: 600;
+}
+
+.learn {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+#tips {
+  font-weight: 600;
+  padding-left: 1em;
+  font-size: 1.6em;
+}
+
+#tipsList {
+  padding-left: 1em;
+  font-size: 1.3em;
+}
+
+.why h2 {
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-weight: 600;
+}
+
+.why h3 {
+  font-weight: 600;
+}
+
+.why li {
+  font-size: 1.2em;
+}
+
+.why ul {
+  padding-left: 5em;
+}
+
+.why {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
