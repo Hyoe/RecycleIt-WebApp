@@ -13,7 +13,7 @@ session_start();
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.php"><img src="/images/logo3Small.png" alt="RECYCLE it!">
+            <a class="navbar-brand" href="/index.php"><img src="/images/logoSmall.png" alt="RECYCLEIt!">
             </a>
           </div>
           <div id="navbar3" class="navbar-collapse collapse">
@@ -43,7 +43,7 @@ session_start();
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.php"><img src="/images/logo3Small.png" alt="RECYCLE it!">
+            <a class="navbar-brand" href="/index.php"><img src="/images/logoSmall.png" alt="RECYCLEIt!">
             </a>
           </div>
           <div id="navbar3" class="navbar-collapse collapse">
