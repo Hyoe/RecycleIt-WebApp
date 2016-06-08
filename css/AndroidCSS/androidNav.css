@@ -1,0 +1,40 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+}
+
+#blackDiv {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: #000000;
+}
+
+#logoDiv {
+    z-index: 1000;
+    text-align: center;
+    position: relative;
+}
+
+#welcomeHeadlineText {
+    font-size: 2.2em;
+    font-weight: 600;
+    padding-top: 16px;
+    padding-bottom: 10px;
+}
+
+#welcomeBulletText {
+    font-size: 1.4em;
+    padding-left: 2em;
+}
+
+#tips {
+  font-weight: 600;
+  padding-left: 3em;
+  font-size: 1.6em;
+}
+
+#tipsList {
+  padding-left: 4em;
+  font-size: 1.3em;
+}
