@@ -53,39 +53,32 @@ $(function(){
   });
 
 
-
   $('#tableAjax').on('click','#ajaxedit',function(){
     var edittrid = $(this).parent().parent().attr('id');
 
-
-//in process change
     $('#close').unbind('click');
     $('#favsButton').unbind('click');
 
+    $('#close, #favsButton').hover(function(event){
+      var top = event.pageY;
+      var left = event.pageX;
+      var moveLeft = -152;
+      $('#cantCloseDiv').css({top:top, left:left+moveLeft}).show();
+      },
+      function(){
+        $('#cantCloseDiv').hide();
+      });
 
       if(pre_tr_id){
         alert("Cancel or update in-progress update first");
 	      return false;
       }
 
-
-
-/*
-  $('#tableAjax').on('click','#ajaxedit',function(){
-    var edittrid = $(this).parent().parent().attr('id');
-      if(pre_tr_id){
-        alert("Cancel or update in-progress update first");
-        return false;
-      }
-*/
-
-
       pre_tr_id = true;
     	var tds = $('#'+edittrid).children('td');
       var tdstr = '';
 		  var td = '';
 		  pre_tds = tds;
-
 
         for(var j=0;j<field_arr.length-3;j++){
           tdstr += '<td><div id="'+field_name[j]+'">'+$(tds[j]).html()+'</div></td>';
@@ -95,10 +88,7 @@ $(function(){
 		    for(var j=4;j<field_arr.length-2;j++){
           tdstr += '<td><div class="checkbox"><label><input name="materials" type="checkbox" value="Aluminum"> Aluminum</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Copper"> Copper</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Electronics"> Electronics</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Glass"> Glass</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Household Hazardous Waste"> Household Hazardous Waste</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Paper"> Paper</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Plastic"> Plastic</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Steel"> Steel</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value="'+$(tds[j]).html()+'" class="hidden" checked="checked"></label></td>';
 
-
           //<select id='mType' class='form-control' multiple='multiple'><option value='Aluminum'>Aluminum</option><option value='Steel'>Steel</option><option value='Copper'>Copper</option><option value='Plastic'>Plastic</option><option value='Glass'>Glass</option><option value='Paper'>Paper</option><option value='Electronics'>Electronics</option><option value='Household Hazardous Waste'>Household Hazardous Waste</option></select></td>";
-
-
 
           //tdstr += "<td><select id='mType' class='form-control' multiple='multiple'><option value='Aluminum'>Aluminum</option><option value='Steel'>Steel</option><option value='Copper'>Copper</option><option value='Plastic'>Plastic</option><option value='Glass'>Glass</option><option value='Paper'>Paper</option><option value='Electronics'>Electronics</option><option value='Household Hazardous Waste'>Household Hazardous Waste</option></select></td>";
 
@@ -132,20 +122,17 @@ $(function(){
   });
 
 
-
-
-
-
-
   $('#tableAjax').on('click','#ajaxupdate',function(){
 
-//in process change
     $('#favsButton, #close').click(function() {
       $('#favoritesDiv').toggle();
     });
     $('#close').bind('click');
     $('#favsButton').bind('click');
 
+    $('#close, #favsButton').hover(function(event){
+      $('#cantCloseDiv').hide();
+    });
 
     var mType = [];
     $.each($("input[type='checkbox']:checked"), function(){
@@ -205,17 +192,15 @@ $(function(){
 		//createInput();
 		pre_tr_id=false;
 
-
-//in process change
       $('#favsButton, #close').click(function() {
         $('#favoritesDiv').toggle();
       });
       $('#close').bind('click');
       $('#favsButton').bind('click');
 
-
-
-
+      $('#close, #favsButton').hover(function(event){
+        $('#cantCloseDiv').hide();
+      });
 	});
 
 });

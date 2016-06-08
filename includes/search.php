@@ -1,5 +1,4 @@
 <? session_start() ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -170,7 +169,6 @@
                         </div>
                       </div>
 
-
                 </div>
               </div>
             </div>
@@ -217,6 +215,9 @@ $('#favsButton').click(function(){
     });
 });
 </script>
+
+<div id="cantCloseDiv">Finish Update or Cancel to close</div>
+
 
 
 <input checked type="checkbox" class="hidden" data-type="recycling" />

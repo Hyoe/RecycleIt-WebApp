@@ -38,3 +38,15 @@
 #addType, #addComment {
     max-width: 322px;
 }
+
+#cantCloseDiv {
+    z-index: 14;
+    position: absolute;
+    display: none;
+    background: #eeeeee;
+    width: 130px;
+    height: auto;
+    border: 1px solid #1a1a1a;
+    color: #000000;
+    padding: 10px;
+}
