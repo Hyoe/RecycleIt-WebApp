@@ -49,14 +49,9 @@
 
   <!-- Header
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div id="blackDiv"></div>
-        <div id="logoDiv"><img src="/images/logoSmall.png" alt="">
-      </div>
-    </div>
-  </div>
+
+<div id="blackDiv"></div>
+  <div id="logoDiv"><img src="/images/logoSmall.png" alt="">
 </div>
 
   <!-- Primary Page Layout
