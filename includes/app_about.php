@@ -75,13 +75,8 @@
                    <li>Update your favorites with the most current information for others to see.</li>
                    <li>Check out our recycling guide to learn more about common household recyclables.</li>
                  </ul>
-               </div>
+               Tips:
                <br />
-               <div id="tips">
-                 Tips:
-               </div>
-
-               <div id="tipsList">
                  <ul>
                    <li>Go to the Search page to locate places and see your favorites.</li>
                    <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
