@@ -226,8 +226,7 @@ google.maps.event.addDomListener(window, "resize", function() {
                               id = data.data[index].place_id;
                               mb = data.data[index].material_reimburse;
                               type = data.data[index].material_type;
-                              comment = data.data[index].comment;
-                              addDbData(id, mb, type, comment);
+                              addDbData(id, mb, type);
                               //console.log(id, p_id);
                           });
                       }
@@ -235,16 +234,35 @@ google.maps.event.addDomListener(window, "resize", function() {
               });
 
               // Function to add db data to infowindow divs
-              function addDbData(id, mb, type, comment){
+              function addDbData(id, mb, type){
                 if (p_id == id && mb != "") {
-                  $('#addReinburse').html('<strong>Reimburse? :</strong> ' + mb);
-                  //addReinburse.innerHTML = '<strong>Reimburse? :</strong> ' + mb;
+                  $('#addReinburse').html('<strong>Reimburses? :</strong> ' + mb);
+                  //addReinburse.innerHTML = '<strong>Reimburses? :</strong> ' + mb;
                 }
                 if (p_id == id && type != "") {
                   $('#addType').html('<strong>Materials Accepted :</strong> ' + type);
                   //addType.innerHTML = '<strong>Materials Accepted :</strong> ' + type;
                 }
-                if (p_id == id && comment != "") {
+              }
+
+
+              // Receive Json from dbCRUD.php
+              $.getJSON('/includes/dbCRUD.php',function(dataComs){
+                  if(dataComs.success == true) {
+                      if(dataComs.dataComs.length > 0){
+                          $.each(dataComs.dataComs,function(index, value){
+                              id = dataComs.dataComs[index].place_id;
+                              comment = dataComs.dataComs[index].comment;
+                              addDbDataComs(id, comment);
+                              //console.log(id, p_id);
+                          });
+                      }
+                  }
+              });
+
+              // Function to add db data to infowindow divs
+              function addDbDataComs(id, comment){
+                if (p_id == id && comment != "" && comment != undefined) {
                   $('#addComment').html('<strong>Comment :</strong> ' + comment);
                   //addComment.innerHTML = '<strong>Comment :</strong> ' + comment;
                 }

@@ -205,7 +205,7 @@
 $('#favsButton').click(function(){
     $.ajax({
       url:"/includes/dbCRUD.php",
-      type:"GET",
+      type:"POST",
       data:"actionfunction=showData",
       cache: false,
       success: function(response){

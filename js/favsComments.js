@@ -13,43 +13,43 @@ var field_name = new Array('name','address','phone','website','mType','reimburse
 
 $(function(){
   $.ajax({
-	  url:"/includes/dbCRUD.php",
+      url:"/includes/dbCRUD.php",
     type:"POST",
     data:"actionfunction=showData",
     cache: false,
     success: function(response){
-		  $('#tableAjax').html(response);
-		  //createInput();
-		}
-	});
+          $('#tableAjax').html(response);
+          //createInput();
+        }
+    });
 
   $('#tableAjax').on('click','#ajaxsave',function(){
-	  var name =  $("input[name='"+field_name[0]+"']");
-	  var address = $("input[name='"+field_name[1]+"']");
-	  var phone =$("input[name='"+field_name[2]+"']");
-	  var website = $("input[name='"+field_name[3]+"']");
+      var name =  $("input[name='"+field_name[0]+"']");
+      var address = $("input[name='"+field_name[1]+"']");
+      var phone =$("input[name='"+field_name[2]+"']");
+      var website = $("input[name='"+field_name[3]+"']");
     var mType = $("input[name='"+field_name[4]+"']");
     var price = $("input[name='"+field_name[5]+"']");
     var comment = $("input[name='"+field_name[6]+"']");
 
-	  if(validate(name,address,phone,price)){
-	   data = "name="+name.val()+"&address="+address.val()+"&phone="+phone.val()+"&website="+website.val()+"&mType="+mType.val()+"&price="+price.val()+"&comment="+comment.val()+"&actionfunction=saveData";
+      if(validate(name,address,phone,price)){
+       data = "name="+name.val()+"&address="+address.val()+"&phone="+phone.val()+"&website="+website.val()+"&mType="+mType.val()+"&price="+price.val()+"&comment="+comment.val()+"&actionfunction=saveData";
         $.ajax({
           url:"/includes/dbCRUD.php",
           type:"POST",
           data:data,
           cache: false,
           success: function(response){
-		        if(response!='error'){
-		          $('#tableAjax').html(response);
-		          //createInput();
-		        }
-		      }
+                if(response!='error'){
+                  $('#tableAjax').html(response);
+                  //createInput();
+                }
+              }
         });
     }
     else{
-	   return;
-	  }
+       return;
+      }
   });
 
 
@@ -71,22 +71,23 @@ $(function(){
 
       if(pre_tr_id){
         alert("Cancel or update in-progress update first");
-	      return false;
+          return false;
       }
 
       pre_tr_id = true;
-    	var tds = $('#'+edittrid).children('td');
+        var tds = $('#'+edittrid).children('td');
       var tdstr = '';
-		  var td = '';
-		  pre_tds = tds;
+          var td = '';
+          pre_tds = tds;
 
         for(var j=0;j<field_arr.length-3;j++){
           tdstr += '<td><div id="'+field_name[j]+'">'+$(tds[j]).html()+'</div></td>';
           //tdstr += "<td><input readonly type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
         }
 
-		    for(var j=4;j<field_arr.length-2;j++){
-          tdstr += '<td><div class="checkbox"><label><input name="materials" type="checkbox" value="Aluminum"> Aluminum</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Copper"> Copper</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Electronics"> Electronics</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Glass"> Glass</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Household Hazardous Waste"> Household Hazardous Waste</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Paper"> Paper</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Plastic"> Plastic</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value=" Steel"> Steel</label></div><div class="checkbox"><label><input name="materials" type="checkbox" value="'+$(tds[j]).html()+'" class="hidden" checked></label></td>';
+        for(var j=4;j<field_arr.length-2;j++){
+          tdstr += '<td><div class="checkbox"><label><input class="checkboxCheck" id="cb1" name="materials" type="checkbox" value="Aluminum"> Aluminum</label></div><div class="checkbox"><label><input class="checkboxCheck" id="cb2" name="materials" type="checkbox" value=" Copper"> Copper</label></div><div class="checkbox"><label><input class="checkboxCheck" id="cb3" name="materials" type="checkbox" value=" Electronics"> Electronics</label></div><div class="checkbox"><label><input class="checkboxCheck" id="cb4" name="materials" type="checkbox" value=" Glass"> Glass</label></div><div class="checkbox"><label><input class="checkboxCheck" id="cb5" name="materials" type="checkbox" value=" Household Hazardous Waste"> Household Hazardous Waste</label></div><div class="checkbox"><label><input class="checkboxCheck" id="cb6" name="materials" type="checkbox" value=" Paper"> Paper</label></div><div class="checkbox"><label><input class="checkboxCheck" id="cb7" name="materials" type="checkbox" value=" Plastic"> Plastic</label></div><div class="checkbox"><label><input class="checkboxCheck" id="cb8" name="materials" type="checkbox" value=" Steel"> Steel</label></div><div class="checkbox"><label><input name="mType" type="checkbox" value="'+$(tds[j]).html()+'" class="hidden" checked="checked"></label></div></td>';
+
 
           //<select id='mType' class='form-control' multiple='multiple'><option value='Aluminum'>Aluminum</option><option value='Steel'>Steel</option><option value='Copper'>Copper</option><option value='Plastic'>Plastic</option><option value='Glass'>Glass</option><option value='Paper'>Paper</option><option value='Electronics'>Electronics</option><option value='Household Hazardous Waste'>Household Hazardous Waste</option></select></td>";
 
@@ -106,9 +107,18 @@ $(function(){
             tdstr += "<td><input class='form-control' id='"+field_name[j]+"' type='"+field_arr[j]+"' name='"+field_name[j]+"' value='"+$(tds[j]).html()+"' placeholder='"+field_pre_text[j]+"'></td>";
         }
 
-    	  tdstr+="<td>"+updatebutton +" " + cancel+"</td>";
-    	  $('#createinput').remove();
-    	  $('#'+edittrid).html(tdstr);
+          tdstr+="<td>"+updatebutton +" " + cancel+"</td>";
+          $('#createinput').remove();
+          $('#'+edittrid).html(tdstr);
+
+/*
+$('input:checkbox').on('change', function(e) {
+  var checkboxId = $(this).prop('id');
+    if (checkboxId > 0) {
+        $('.hidden').prop('checked', false);
+      }
+});
+*/
 
     $('.checkbox').on('click', 'input[type="checkbox"]', function(){
       if ($('input[type="checkbox"]').length <= 0) {
@@ -118,6 +128,7 @@ $(function(){
         $('.hidden').prop('checked', false);
       }
     });
+
 
   });
 
@@ -134,10 +145,21 @@ $(function(){
       $('#cantCloseDiv').hide();
     });
 
+
+/*
+    var mType = $('.checkboxCheck:checked').map(function(event){
+      return this.value;
+    }).get().join(', ')
+*/
+
+
     var mType = [];
     $.each($("input[type='checkbox']:checked"), function(){
-      mType.push($(this).val());
+      if($(this).val() != 'on'){
+        mType.push($(this).val());
+      }
     });
+
 
     //var mType = $('#mType:checked').val();
     //console.log(mTypeValue);
@@ -169,7 +191,7 @@ $(function(){
       });
   });
 
-	$('#tableAjax').on('click','#ajaxdelete',function(){
+    $('#tableAjax').on('click','#ajaxdelete',function(){
     var edittrid = $(this).parent().parent().attr('id');
     data = "deleteid="+edittrid+"&actionfunction=deleteData";
     $.ajax({
@@ -189,8 +211,8 @@ $(function(){
   $('#tableAjax').on('click','#ajaxcancel',function(){
     var edittrid = $(this).parent().parent().attr('id');
     $('#'+edittrid).html(pre_tds);
-		//createInput();
-		pre_tr_id=false;
+        //createInput();
+        pre_tr_id=false;
 
       $('#favsButton, #close').click(function() {
         $('#favoritesDiv').toggle();
@@ -201,7 +223,7 @@ $(function(){
       $('#close, #favsButton').hover(function(event){
         $('#cantCloseDiv').hide();
       });
-	});
+    });
 
 });
 
@@ -217,20 +239,20 @@ $(function(){
 function validate(price){
         /*
 
-		if (name.val()=='') {
-			fname.addClass('hightlight');
-			return false;
-		} else name.removeClass('hightlight');
+        if (name.val()=='') {
+            fname.addClass('hightlight');
+            return false;
+        } else name.removeClass('hightlight');
 
         if (address.val()=='') {
-			address.addClass('hightlight');
-			return false;
-		} else address.removeClass('hightlight');
+            address.addClass('hightlight');
+            return false;
+        } else address.removeClass('hightlight');
 
         if (phone.val()=='') {
-			phone.addClass('hightlight');
-			return false;
-		} else phone.removeClass('hightlight');
+            phone.addClass('hightlight');
+            return false;
+        } else phone.removeClass('hightlight');
 
 
         if(!priceFilter.test(price.val())){
@@ -241,6 +263,6 @@ function validate(price){
 
         */
 
-		return true;
+        return true;
 
 }

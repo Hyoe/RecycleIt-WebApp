@@ -41,7 +41,7 @@ function showData($data,$db){
           <th>Phone</th>
           <th>Website</th>
           <th>Material Type</th>
-          <th>Reimburse?</th>
+          <th>Reimburses?</th>
           <th>Comment</th>
           <th>Edit</th>
           <th>Delete</th>
@@ -126,15 +126,21 @@ function deleteData($data,$db){
 */
 
 
-// Json reimburse, material types, and comments back to map
+  // Json reimburse, material types, and comments back to map
   $response['success'] = false;
-  $sql = "SELECT materials_prices.place_id, materials_prices.material_type, materials_prices.material_reimburse, favs_comments.comment
-          FROM materials_prices
-          JOIN favs_comments
-          WHERE materials_prices.place_id = favs_comments.place_id";
+  $sql = "SELECT place_id, material_type, material_reimburse
+          FROM materials_prices";
   $data=$db->prepare($sql);
   $data->execute(array());
   $favs=$data->fetchAll();
+
+
+  $sql = "SELECT place_id, comment
+          FROM favs_comments";
+  $dataComs=$db->prepare($sql);
+  $dataComs->execute(array());
+  $favsComs=$dataComs->fetchAll();
+
 
   $sql = "SELECT place_id
           FROM favs_comments
@@ -147,6 +153,7 @@ function deleteData($data,$db){
     $response['success'] = true;
     $response['data'] = $favs;
     $response['dataFavs'] = $favsId;
+    $response['dataComs'] = $favsComs;
   }
 
   echo json_encode($response);
