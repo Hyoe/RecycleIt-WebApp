@@ -4,12 +4,6 @@ session_start();
 
 <?php
 
-/*
-$sql = "INSERT INTO users (username, pw, email) VALUES (:username, :pw, :email)";
-$stmt = $db->prepare($sql);
-$stmt->execute(array(":username"=>"hyo", ":pw"=>"hyo", ":email"=>"hyo@hyo.com"));
-*/
-
 if ($_POST) {
 
   require("../dbconnection/appenginedbhl.php");
