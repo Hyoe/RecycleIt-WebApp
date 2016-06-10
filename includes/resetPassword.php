@@ -67,11 +67,10 @@ session_start();
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!--
+
 <div id="loginPicDiv">
-  <img src="/images/plasticImageCut.jpg" alt="glass">
+  <img src="/images/plasticImageCut.jpg" alt="plastic">
 </div>
--->
 
 
 <?php
@@ -125,18 +124,16 @@ if ($record <> 1) {
         $stmt -> execute(array(":pw"=>$updatedPassword, ":username"=>$username));
         $recordUpdate = $stmt->rowCount();
 
-          if ($recordUpdate == 1) {
+          if ($recordUpdate > 0) {
             $sql = "UPDATE forgot_pass
                     SET status = :status
-                    WHERE username = :username
-                    AND ekey = :ekey
-                    AND status = :status";
+                    WHERE username = :username";
             $stmt = $db -> prepare($sql);
-            $stmt -> execute(array(":ekey"=>$ek, ":username"=>$username, ":status"=>"pending"));
+            $stmt -> execute(array(":username"=>$username, ":status"=>"complete"));
             $result = '<div class="alert alert-success">Password successfully updated.</div>';
           }
           else {
-            $result = '<div class="alert alert-danger">Oops something went wrong, email site Admin</div>';
+            $result = '<div class="alert alert-danger">Previous password cannot be used, try again, or email site Admin.</div>';
           }
       }
     }
@@ -176,7 +173,7 @@ if ($record <> 1) {
                         <div class="form-group">
                           <div class="row">
                             <div class="col-sm-6 col-sm-offset-3">
-                              <button type="submit" name="pass-submit" id="pass-submit" tabindex="4" class="form-control btn btn-register" value="Change Password"><span class="glyphicon glyphicon-log-in"></span> &nbsp; Change Password</button>
+                              <button type="submit" name="pass-submit" id="pass-submit" tabindex="4" class="form-control btn btn-register" value="Change Password"><span class="glyphicon glyphicon-save"></span> &nbsp; Change Password</button>
                             </div>
                           </div>
                         </div>

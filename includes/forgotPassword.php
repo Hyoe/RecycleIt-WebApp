@@ -67,11 +67,10 @@ session_start();
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!--
+
 <div id="loginPicDiv">
-  <img src="/images/plasticImageCut.jpg" alt="glass">
+  <img src="/images/glassImageCut.jpg" alt="glass">
 </div>
--->
 
 
 <?php
@@ -159,7 +158,7 @@ if (isset($_POST["email"])) {
 
           $to = $emailInDB;
           $subject = 'Password Reset';
-          $message = "Request to reset password for: " .$username. "\n\nTo reset your password, please visit the link below.\n\n<a href='".$site_url."'>".$site_url."</a>\n\nThank you,\n\nTeam RecycleIt!";
+          $message = "Request to reset password for: " .$username. "<br><br>" . "To reset your password, please visit the link below within 24 hours, or the the link will expire." . "<br><br>" . "<a href='".$site_url."'>".$site_url."</a>" . "<br><br>" . "Thank you," . "<br><br>" . "Team RecycleIt!";
           $headers  = 'MIME-Version: 1.0' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $headers .= "From: passwords@recycleit-web.appspotmail.com";
@@ -200,7 +199,7 @@ if (isset($_POST["email"])) {
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-sm-6 col-sm-offset-3">
-                                                <button type="submit" name="email-submit" id="email-submit" tabindex="4" class="form-control btn btn-register" value="Submit"><span class="glyphicon glyphicon-envelope"></span> &nbsp; SUBMIT</button>
+                                                <button type="submit" name="email-submit" id="email-submit" tabindex="4" class="form-control btn btn-register" value="Submit"><span class="glyphicon glyphicon-send"></span> &nbsp; SUBMIT</button>
                                             </div>
                                         </div>
                                     </div>
