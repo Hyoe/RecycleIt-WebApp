@@ -63,8 +63,23 @@
         <div id="welcomeText">
 
           <div id="welcomeHeadlineText">
-            <p>Welcome to RecycleIt!</p>
+            <p>RecycleIt!</p>
           </div>
+
+          <div id="welcomeBulletText">
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Find recycling centers near you nationwide.
+              </p>
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Save your favorite facilities.
+              </p>
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Update your favorites with information for others to see.</p>
+              <p><i class="fa fa-recycle" aria-hidden="true"></i>
+              Learn more about common household recyclables.</p>
+            </div>
+
+            <!--
 
             <div id="welcomeBulletText">
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
@@ -78,6 +93,8 @@
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
               Check out our recycling guide to learn more about common household recyclables.</p>
             </div>
+
+            -->
             <br />
             <div id="tips">
               Tips:

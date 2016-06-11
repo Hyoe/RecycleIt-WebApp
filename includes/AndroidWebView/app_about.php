@@ -68,15 +68,15 @@
 
             <div id="welcomeBulletText">
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Register / login to save your favorite facilities.
+              Find recycling centers nationwide.
               </p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Locate nearby recycling centers on our search page.
+              Save and update your favorite facilities.
               </p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Update your favorites with the most current information for others to see.</p>
+              Get updated information from other users.</p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Check out our recycling guide to learn more about common household recyclables.</p>
+              Learn more about recycling.</p>
             </div>
             <br />
             <div id="tips">
@@ -85,9 +85,8 @@
 
             <div id="tipsList">
               <ul>
-                <li>Go to the Search page to locate places and see your favorites.</li>
-                <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
-                <li>Press the “Find Places” button to show recycling centers in your selected area.</li>
+                <li>Select the GPS icon or begin typing your search criteria and select from the available options to set the map at your desired location.</li>
+                <li>Press the “Search” button to show recycling centers in your selected area (the search button will not work unless you perform the first bullet first).</li>
               </ul>
             </div>
 

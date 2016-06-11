@@ -133,7 +133,7 @@ if ($record <> 1) {
             $result = '<div class="alert alert-success">Password successfully updated.</div>';
           }
           else {
-            $result = '<div class="alert alert-danger">Previous password cannot be used, try again, or email site Admin.</div>';
+            $result = '<div class="alert alert-danger">Previous password cannot be used, try again, or email us through our Contact Page.</div>';
           }
       }
     }

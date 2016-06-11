@@ -84,7 +84,7 @@
 
                       <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn btn-success btn-lg" id="find-places">
-                          <span class="glyphicon glyphicon-search"></span> Find Places
+                          <span class="glyphicon glyphicon-search"></span> Search
                         </button>
                       </div>
 
@@ -146,7 +146,7 @@
 
                           <div class="btn-group" role="group" aria-label="...">
                             <button type="button" class="btn btn-success btn-lg" id="find-places">
-                              <span class="glyphicon glyphicon-search"></span> Find Places
+                              <span class="glyphicon glyphicon-search"></span> Search
                             </button>
                           </div>
 
