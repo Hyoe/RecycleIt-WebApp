@@ -71,10 +71,10 @@
               Find recycling centers nationwide.
               </p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Save your favorite facilities.
+              Save and update your favorite facilities.
               </p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Update your favorites with information for others to see.</p>
+              Get updated information from other users.</p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
               Learn more about recycling.</p>
             </div>
