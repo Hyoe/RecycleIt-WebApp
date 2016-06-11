@@ -68,7 +68,7 @@
 
           <div id="welcomeBulletText">
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Find recycling centers near you nationwide.
+              Find recycling centers nationwide.
               </p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
               Save your favorite facilities.
@@ -76,7 +76,7 @@
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
               Update your favorites with information for others to see.</p>
               <p><i class="fa fa-recycle" aria-hidden="true"></i>
-              Learn more about common household recyclables.</p>
+              Learn more about recycling.</p>
             </div>
 
             <!--
