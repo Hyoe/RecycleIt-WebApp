@@ -19,6 +19,11 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
+#find-places {
+    padding-left: 33px;
+    padding-right: 33px;
+}
+
 #hideResults {
     display: none;
 }
