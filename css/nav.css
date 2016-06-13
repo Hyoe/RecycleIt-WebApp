@@ -28,7 +28,7 @@ body {
 }
 
 .navbar-static-bottom {
-    color: white;
+    color: #CCD1D1;
     text-align: center;
     padding-top: 10px
 }
@@ -37,7 +37,6 @@ body {
     z-index: 1;
 }
 
-.navbar .navbar-inverse a:hover {
-  color: 33cc33 !important;
+.nav a {
+  font-weight: 600 !important;
 }
-
