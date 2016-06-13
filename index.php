@@ -104,7 +104,7 @@
               <ul>
                 <li>Go to the Search page to locate places and see your favorites.</li>
                 <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
-                <li>Press the “Find Places” button to show recycling centers in your selected area.</li>
+                <li>Press the “Search” button to show recycling centers in your selected area.</li>
               </ul>
             </div>
 
@@ -118,8 +118,8 @@
 
 <div class="slideshow">
   <div class="slideshow-image" style="background-image: url('/images/glassImage.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('/images/cansImage.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('/images/plasticImage.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('/images/cansImageBlur.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('/images/plasticImageBlur.jpg')"></div>
 </div>
 
 
