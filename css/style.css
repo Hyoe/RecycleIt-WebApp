@@ -97,7 +97,9 @@ input[type=checkbox].hidden {
     width: auto;
     height: auto;
     position: absolute;
-    z-index: 99;}
+    z-index: 99;
+    border-radius: 0 25px 25px 0;
+  }
 
 .imageTint {
   background: rgba(0, 0, 0, 0.7);

@@ -128,7 +128,7 @@ google.maps.event.addDomListener(window, "resize", function() {
       },
       function(response){
 
-        console.log(response);
+        //console.log(response);
 
         var response_data = JSON.parse(response);
 
