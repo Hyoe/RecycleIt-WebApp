@@ -144,9 +144,6 @@ if ($record <> 1) {
       <div class="form-signin">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <div class="mainMessage">
-                  <?php echo $result; ?>
-            </div>
             <div class="panel panel-login">
               <div class="panel-heading">
                 <div class="row">
@@ -158,9 +155,9 @@ if ($record <> 1) {
               </div>
                 <div class="panel-body">
                   <form class="form-signin" id="" action="" method="post" role="form" style="display: block;">
-                    <div id="error">
-                      <!-- error will be showen here ! -->
-                    </div>
+                        <div class="mainMessage">
+                          <?php echo $result; ?>
+                        </div>
                         <input type=hidden name=todo value=new-password>
                         <input type="hidden" name="ek" value="<?php echo htmlspecialchars($ek); ?>">
                         <input type="hidden" name="username" value="<?php echo htmlspecialchars($username); ?>">

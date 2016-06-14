@@ -178,9 +178,7 @@ if (isset($_POST["email"])) {
 <div id="rsform" class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-              <div class="mainMessage">
-                <?php echo $result; ?>
-              </div>
+
                 <div class="panel panel-login">
                     <div class="panel-heading">
                         <div class="row">
@@ -194,6 +192,9 @@ if (isset($_POST["email"])) {
                         <div class="row">
                             <div class="col-lg-12">
                                 <form id="" action="" method="post" role="form">
+                                  <div class="mainMessage">
+                                    <?php echo $result; ?>
+                                  </div>
                                     <div class="form-group">
                                         <input type="email" name="email" id="email" tabindex="2" class="form-control" placeholder="Email Address" value="<?php echo htmlspecialchars($_POST['email']); ?>">
                                         <?php echo "<p class='text-danger'>$msg</p>";?>

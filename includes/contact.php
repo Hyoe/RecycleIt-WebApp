@@ -99,9 +99,6 @@
 <div id="rsform" class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-              <div class="mainMessage">
-                <?php echo $result; ?>
-              </div>
                 <div class="panel panel-login">
                     <div class="panel-heading">
                         <div class="row">
@@ -115,6 +112,9 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <form id="register-form" action="" method="post" role="form">
+                                    <div class="mainMessage">
+                                      <?php echo $result; ?>
+                                    </div>
                                     <div class="form-group">
                                         <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
                                         <?php echo "<p class='text-danger'>$errName</p>";?>
