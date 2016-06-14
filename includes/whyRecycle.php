@@ -16,6 +16,7 @@
   <!-- FONTS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,greek' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Istok+Web:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
   <script src="https://use.fontawesome.com/42200448b5.js"></script>
 
   <!-- CSS
@@ -62,7 +63,7 @@
       <div class=title>
         <h2>Why Recycle?</h2>
       </div>
-        <h3><i class="fa fa-recycle" aria-hidden="true"></i>&nbsp&nbspEconomic Recycling Benefits and Facts</h3>
+        <h3><i class="fa fa-recycle" aria-hidden="true"></i>&nbsp;Economic Recycling Benefits and Facts</h3>
       <ul>
         <li>Well-run recycling programs cost less to operate than waste collection, landfilling, and incineration.</li>
         <li>The more people recycle, the cheaper it gets.</li>
@@ -74,7 +75,7 @@
         <li>Recycling creates four jobs for every one job created in the waste management and disposal industries.</li>
         <li>Thousands of U.S. companies have saved millions of dollars through their voluntary recycling programs. They wouldn't recycle if it didn't make economic sense.</li>
       </ul>
-      <h3><i class="fa fa-recycle" aria-hidden="true"></i>&nbsp&nbspEnvironmental Recycling Benefits and Facts</h3>
+      <h3><i class="fa fa-recycle" aria-hidden="true"></i>&nbsp;Environmental Recycling Benefits and Facts</h3>
       <ul>
         <li>Recycling and composting diverted nearly 70 million tons of material away from landfills and incinerators in 2000, up from 34 million tons in 1990-doubling in just 10 years.</li>
         <li>Every ton of paper that is recycled saves 17 trees.</li>

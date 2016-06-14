@@ -16,6 +16,7 @@
   <!-- FONTS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,greek' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Istok+Web:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

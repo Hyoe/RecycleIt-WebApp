@@ -1,5 +1,6 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Istok Web', sans-serif;
     padding-bottom: 50px;
 }
 
@@ -87,45 +88,29 @@ input[type=checkbox].hidden {
   min-height: 50%;
 }
 
-.imageNav {
-    background: none;
-    z-index: 10;
-    color: #ffffff;
-    padding-left: 20px;
-    padding-right: 20px;
-    position: absolute;
-    width: auto;
-    height: auto;
-    position: absolute;
-    z-index: 99;
-    border-radius: 0 25px 25px 0;
-  }
+#welcomeText {
 
-.imageTint {
-  background: rgba(0, 0, 0, 0.65);
-  height: auto;
-  margin-top: 10%;
-  z-index: 101;
 }
 
-#welcomeText {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    width: 100%;
-    z-index: 102;
+.banner{
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 #welcomeHeadlineText {
-    font-size: 2.5em;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
 }
 
 #welcomeBulletText {
-    font-size: 1.6em;
+    font-size: 2.2rem;
+    text-align: center;
 }
 
 #tips {
-  font-weight: 600;
+  font-weight: 700;
   padding-left: 1em;
   font-size: 1.6em;
 }
@@ -133,16 +118,17 @@ input[type=checkbox].hidden {
 #tipsList {
   padding-left: 1em;
   font-size: 1.3em;
+  padding-bottom: 20px;
 }
 
 .why h2 {
   text-align: center;
   padding: 50px 0 30px 0;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .why h3 {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .why li {
@@ -157,3 +143,15 @@ input[type=checkbox].hidden {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+.logo {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.aboutUs {
+  font-size: 2rem;
+  padding-top: 20px;
+}
+
+
