@@ -8,9 +8,9 @@ handlers:
 - url: /css
   static_dir: css
 
-- url: /(.+\.(ico|jpg|png|gif))$
+- url: /(.+\.(ico|jpg|png|gif|svg))$
   static_files: \1
-  upload: (.+\.(ico|jpg|png|gif))$
+  upload: (.+\.(ico|jpg|png|gif|svg))$
   application_readable: true
 
 - url: /(.+\.(htm|html|css|js))$

@@ -147,6 +147,9 @@ input[type=checkbox].hidden {
 .logo {
   text-align: center;
   padding-top: 10px;
+  width: 100%;
+  display: block;
+  margin: auto;
 }
 
 .aboutUs {

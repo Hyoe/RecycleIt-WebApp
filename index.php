@@ -23,10 +23,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <!-- Latest compiled and minified CSS -->
   <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/css/flexslider.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/nav.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/css/kburns.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="/css/flexslider.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -66,15 +66,15 @@
       <p class="flex-caption"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;Find recycling centers nationwide.</p>
     </li>
     <li>
-      <img src="/images/glassImage600.jpg" />
+      <img src="/images/glassImage320.jpg" />
       <p class="flex-caption"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;&nbsp;Save and update your favorite facilities.</p>
     </li>
     <li>
-      <img src="/images/cansImage600.jpg" />
+      <img src="/images/cansImage320.jpg" />
       <p class="flex-caption"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;Get updated information from other users.</p>
     </li>
     <li>
-      <img src="/images/plasticImage600.jpg" />
+      <img src="/images/plasticImage320.jpg" />
       <p class="flex-caption"><i class="fa fa-leanpub" aria-hidden="true"></i>&nbsp;&nbsp;Learn more about recycling.</p>
     </li>
   </ul>
@@ -82,7 +82,7 @@
 
 <div class="banner">
   <div class="logo">
-    <img src="/images/logo6Small.png">
+    <img src="/images/logo6.svg" alt="" width="240px">
   </div>
   <div id="welcomeText">
     <div id="welcomeHeadlineText">
@@ -110,7 +110,7 @@
         </div>
 
           <div class="aboutUs">
-            <p>Recycle It! is a website and companion mobile Android app that integrates with the Google Maps and Places API in combination with a custom database to list recycling centers by their location and provide key information such as which materials they accept.</p>
+            <p>RecycleIt! is a website and companion mobile Android app that integrates with the Google Maps and Places API in combination with a custom database to list recycling centers by their location and provide key information such as which materials they accept.</p>
 
             <p>RecycleIt! will encourage people to recycle and can provide those who already make an effort to collect money for their recyclable goods with a user-friendly resource. The overall purpose is to prevent recyclable materials from being thrown in the garbage. Right now, many people recycle at their homes through their city’s waste management utility services. Recycle It! will allow them to benefit monetarily if they choose to take their items to a recycling center. They can also take items such as certain kinds of plastics, batteries, light bulbs, electronics, and construction materials that are not typically accepted by home waste management companies to recycling centers that will accept such items. In this way, items that many people dispose of to landfills are more likely to be recycled.</p>
 
@@ -142,6 +142,7 @@ $(window).load(function() {
     animation: "fade",
     slideshowSpeed: 3500,
     controlNav: false,
+    directionNav: false,
   });
 });
 </script>

@@ -295,5 +295,8 @@ html[xmlns] .flexslider .slides {
   .flex-caption {
     font-size: 1.8rem;
   }
+  .flexslider {
+    margin-top: 40px;
+  }
 }
 
