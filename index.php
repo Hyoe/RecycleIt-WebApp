@@ -114,18 +114,18 @@
 
             <p>RecycleIt! will encourage people to recycle and can provide those who already make an effort to collect money for their recyclable goods with a user-friendly resource. The overall purpose is to prevent recyclable materials from being thrown in the garbage. Right now, many people recycle at their homes through their city’s waste management utility services. Recycle It! will allow them to benefit monetarily if they choose to take their items to a recycling center. They can also take items such as certain kinds of plastics, batteries, light bulbs, electronics, and construction materials that are not typically accepted by home waste management companies to recycling centers that will accept such items. In this way, items that many people dispose of to landfills are more likely to be recycled.</p>
 
-            <p>RecycleIt! was created in 2016 by four CSUMB computer Science majors. These four students decided to marry their passion for the environment with their recently developed software engineering skills to develop technology to encourage recycling, and thus benefit the environment and the end users through RecycleIt! web and mobile applications. They aim to do what they can to keep the planet healthy for future generations.</p>
+            <p>RecycleIt! and keep our planet healthy.</p>
         </div>
 
         <br />
         <div id="tips">
-          Tips for using our website:
+          Tips for using the website:
         </div>
 
         <div id="tipsList">
           <ul>
             <li>Go to the Search page to locate places and see your favorites.</li>
-            <li>Begin typing search criteria and select from the available options to set the map at your desired location.</li>
+            <li>Begin typing search criteria and click from the available options to set the map at your desired location.</li>
             <li>Press the “Search” button to show recycling centers in your selected area.</li>
           </ul>
         </div>
